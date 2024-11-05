@@ -1,0 +1,5 @@
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.csproj.AssemblyReference.cache
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.Forms.Login.resources
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.Properties.Resources.resources
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.csproj.GenerateResource.cache
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.csproj.CoreCompileInputs.cache

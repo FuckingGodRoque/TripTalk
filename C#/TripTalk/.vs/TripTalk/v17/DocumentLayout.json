@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|c:\\users\\daniel roque\\onedrive - instituto tecnol\u00F3gico de morelia\\5to semestre\\tap\\triptalk\\c#\\triptalk\\triptalk\\clases\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\clases\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|c:\\users\\daniel roque\\onedrive - instituto tecnol\u00F3gico de morelia\\5to semestre\\tap\\triptalk\\c#\\triptalk\\triptalk\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|c:\\users\\daniel roque\\onedrive - instituto tecnol\u00F3gico de morelia\\5to semestre\\tap\\triptalk\\c#\\triptalk\\triptalk\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|c:\\users\\daniel roque\\onedrive - instituto tecnol\u00F3gico de morelia\\5to semestre\\tap\\triptalk\\c#\\triptalk\\triptalk\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|c:\\users\\daniel roque\\onedrive - instituto tecnol\u00F3gico de morelia\\5to semestre\\tap\\triptalk\\c#\\triptalk\\triptalk\\clases\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\clases\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +30,41 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Login.cs",
+              "RelativeDocumentMoniker": "TripTalk\\Forms\\Login.cs",
+              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Login.cs",
+              "RelativeToolTip": "TripTalk\\Forms\\Login.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T16:44:16.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Login.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Login.cs",
+              "RelativeDocumentMoniker": "TripTalk\\Forms\\Login.cs",
+              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Login.cs [Dise\u00F1o]",
+              "RelativeToolTip": "TripTalk\\Forms\\Login.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T16:25:10.246Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Clases\\Usuario.cs",
               "RelativeDocumentMoniker": "TripTalk\\Clases\\Usuario.cs",
               "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Clases\\Usuario.cs",
               "RelativeToolTip": "TripTalk\\Clases\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAIwBkAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-30T04:31:17.679Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Login.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Login.cs",
-              "RelativeDocumentMoniker": "TripTalk\\Login.cs",
-              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Login.cs [Dise\u00F1o]",
-              "RelativeToolTip": "TripTalk\\Login.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T17:51:14.853Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
