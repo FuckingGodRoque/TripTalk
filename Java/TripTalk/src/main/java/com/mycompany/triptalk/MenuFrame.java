@@ -349,7 +349,7 @@ public class MenuFrame extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(189, 75, 0));
-        jLabel7.setText("Principal obstáculo durante este viaje");
+        jLabel7.setText("Principal obstáculo durante el viaje");
         panelImage2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 290, -1));
 
         jTextField3.setBackground(new java.awt.Color(255, 240, 222));
@@ -363,8 +363,8 @@ public class MenuFrame extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(189, 75, 0));
-        jLabel8.setText("Recomienda tres sitios para visitar en este viaje ");
-        panelImage2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
+        jLabel8.setText("Recomienda tres sitios para visitar al hacer este viaje ");
+        panelImage2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
 
         jTextArea1.setBackground(new java.awt.Color(255, 240, 222));
         jTextArea1.setColumns(20);

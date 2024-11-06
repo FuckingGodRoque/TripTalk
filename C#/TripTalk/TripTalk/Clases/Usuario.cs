@@ -8,7 +8,7 @@ namespace TripTalk.Clases
 {
     public class Usuario
     {
-        int id_Usuario;
+        int idUsuario;
         String nombre;
         String apellido;
         String user;
@@ -19,9 +19,9 @@ namespace TripTalk.Clases
 
         }
 
-        public Usuario(int id_Usuario, string nombre,string apellido, string user, string password, string correo, char rol)
+        public Usuario(int idUsuario, string nombre,string apellido, string user, string password, string correo, char rol)
         {
-            this.id_Usuario = id_Usuario;
+            this.idUsuario = idUsuario;
             this.nombre = nombre;
             this.apellido = apellido;
             this.user = user;
@@ -30,7 +30,7 @@ namespace TripTalk.Clases
             this.rol = rol;
         }
 
-        public int Id_Usuario { get => id_Usuario; set => id_Usuario = value; }
+        public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public string User { get => user; set => user = value; }
@@ -40,7 +40,7 @@ namespace TripTalk.Clases
 
         public override string ToString()
         {
-            return "Usuario{" + "id_Usuario=" + id_Usuario + ", nombre=" + nombre + ", password=" + password + ", correo=" + correo + ", rol=" + rol + '}';
+            return "Usuario{" + "id_Usuario=" + idUsuario + ", nombre=" + nombre + ", password=" + password + ", correo=" + correo + ", rol=" + rol + '}';
         }
     }
 }

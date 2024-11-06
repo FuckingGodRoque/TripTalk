@@ -44,6 +44,8 @@
             this.textEquipaje = new System.Windows.Forms.TextBox();
             this.textFechas = new System.Windows.Forms.TextBox();
             this.btnComentarios = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,10 +205,28 @@
             this.btnComentarios.Text = "Ver comentarios";
             this.btnComentarios.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Location = new System.Drawing.Point(15, 67);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(526, 2);
+            this.panel1.TabIndex = 16;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel2.Location = new System.Drawing.Point(15, 162);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(526, 2);
+            this.panel2.TabIndex = 17;
+            // 
             // panelPublicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnComentarios);
             this.Controls.Add(this.textFechas);
             this.Controls.Add(this.textEquipaje);
@@ -249,5 +269,7 @@
         private System.Windows.Forms.TextBox textEquipaje;
         private System.Windows.Forms.TextBox textFechas;
         private System.Windows.Forms.Button btnComentarios;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Publicacion.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
