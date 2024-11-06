@@ -63,6 +63,76 @@ namespace TripTalk.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap barraDegradadoNaranja {
+            get {
+                object obj = ResourceManager.GetObject("barraDegradadoNaranja", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barraDegradadoNaranja120x24 {
+            get {
+                object obj = ResourceManager.GetObject("barraDegradadoNaranja120x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barraNaranja117x35 {
+            get {
+                object obj = ResourceManager.GetObject("barraNaranja117x35", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap botonBlancoSombra100x30 {
+            get {
+                object obj = ResourceManager.GetObject("botonBlancoSombra100x30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap botonBlancoSombra117x35 {
+            get {
+                object obj = ResourceManager.GetObject("botonBlancoSombra117x35", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap botonGrisSombra {
+            get {
+                object obj = ResourceManager.GetObject("botonGrisSombra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap botonGrisSombra100x30 {
+            get {
+                object obj = ResourceManager.GetObject("botonGrisSombra100x30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_me_15 {
             get {
                 object obj = ResourceManager.GetObject("icons8-me-15", resourceCulture);
@@ -86,6 +156,66 @@ namespace TripTalk.Properties {
         internal static System.Drawing.Bitmap logoTripTalk_150x75 {
             get {
                 object obj = ResourceManager.GetObject("logoTripTalk 150x75", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoTripTalk_350x175 {
+            get {
+                object obj = ResourceManager.GetObject("logoTripTalk 350x175", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoTripTalk220x110 {
+            get {
+                object obj = ResourceManager.GetObject("logoTripTalk220x110", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoTripTalk260x140 {
+            get {
+                object obj = ResourceManager.GetObject("logoTripTalk260x140", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap panelBlancoRedondeado {
+            get {
+                object obj = ResourceManager.GetObject("panelBlancoRedondeado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap panelBlancoRedondeado600 {
+            get {
+                object obj = ResourceManager.GetObject("panelBlancoRedondeado600", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap panelBlancoRedondeado830x620 {
+            get {
+                object obj = ResourceManager.GetObject("panelBlancoRedondeado830x620", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

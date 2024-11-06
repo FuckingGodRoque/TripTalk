@@ -48,7 +48,7 @@ namespace TripTalk.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string user = textUsuario.Text;
+            string user = textCorreo.Text;
             string pass = textPassword.Text;
             bool existe = false;
 
@@ -60,7 +60,7 @@ namespace TripTalk.Forms
             bool acceso = false;
             foreach (Usuario usuario in listUsuarios)
             {
-                if (usuario.User == textUsuario.Text)
+                if (usuario.User == textCorreo.Text)
                 {
                     if (usuario.Password == textPassword.Text)
                     {
@@ -78,8 +78,8 @@ namespace TripTalk.Forms
             }
             else
             {
-                textUsuario.Text = "Ingrese su nombre de usuario";
-                textUsuario.ForeColor = Color.Gray;
+                textCorreo.Text = "Ingrese su nombre de usuario";
+                textCorreo.ForeColor = Color.Gray;
                 textPassword.Text = "********";
                 textPassword.ForeColor = Color.Gray;
                 MessageBox.Show("Usuario o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -98,6 +98,34 @@ namespace TripTalk.Forms
             catch(Exception ex)
             {
                 new Log().WriteException(ex);
+            }
+        }
+
+        private void textUsuario_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (textCorreo.Text.Equals("Ingrese su correo"))
+            {
+                textCorreo.Text = "";
+                textCorreo.ForeColor = Color.Black;
+            }
+            if (textPassword.Text.Equals(""))
+            {
+                textPassword.Text = "********";
+                textPassword.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textPassword_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (textPassword.Text.Equals("********"))
+            {
+                textPassword.Text = "";
+                textPassword.ForeColor = Color.Black;
+            }
+            if (textCorreo.Text.Equals(""))
+            {
+                textCorreo.Text = "Ingrese su correo";
+                textCorreo.ForeColor = Color.Gray;
             }
         }
     }

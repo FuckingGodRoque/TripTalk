@@ -57,10 +57,37 @@
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\panelPublicacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\panelPublicacion.Designer.cs">
+      <DependentUpon>panelPublicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\panelPublicacion.resx">
+      <DependentUpon>panelPublicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,6 +121,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logoTripTalk 150x75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barraDegradadoNaranja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoTripTalk260x140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoTripTalk220x110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panelBlancoRedondeado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panelBlancoRedondeado830x620.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panelBlancoRedondeado600.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botonGrisSombra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botonGrisSombra100x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botonBlancoSombra100x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barraNaranja117x35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botonBlancoSombra117x35.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
