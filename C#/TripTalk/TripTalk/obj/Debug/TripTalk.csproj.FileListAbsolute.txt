@@ -3,3 +3,14 @@ C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\
 C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.Properties.Resources.resources
 C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.csproj.GenerateResource.cache
 C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.csproj.CoreCompileInputs.cache
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\bin\Debug\TripTalk.exe.config
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\bin\Debug\TripTalk.exe
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\bin\Debug\TripTalk.pdb
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\bin\Debug\Newtonsoft.Json.dll
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\bin\Debug\Newtonsoft.Json.xml
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.Forms.Menu.resources
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.Forms.panelPublicacion.resources
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.Forms.Register.resources
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.csproj.Up2Date
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.exe
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.pdb

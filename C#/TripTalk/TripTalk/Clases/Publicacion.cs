@@ -14,6 +14,7 @@ namespace TripTalk.Clases
         private string lugar;
         private string presupuesto;
         private string obstaculos;
+        private string detalles;
         private string equipaje;
         private string fechasRecomendadas;
         private string tipo;
@@ -31,8 +32,17 @@ namespace TripTalk.Clases
             this.obstaculos = obstaculos;
             this.equipaje = equipaje;
             this.fechasRecomendadas = fechasRecomendadas;
-            this.tipo = tipo;
+            this.tipo = "opinion";
             this.usuario_IdUsuario = usuario_IdUsuario;
+        }
+
+        public Publicacion(int idPublicacion, string lugar, string presupuesto, string detalles)
+        {
+            this.idPublicacion= idPublicacion;
+            this.lugar = lugar;
+            this.presupuesto= presupuesto;
+            this.detalles= detalles;
+            this.tipo = "viaje";
         }
 
 
@@ -49,6 +59,12 @@ namespace TripTalk.Clases
         }
 
         public string Presupuesto
+        {
+            get => presupuesto;
+            set => presupuesto = value;
+        }
+
+        public string Detalles
         {
             get => presupuesto;
             set => presupuesto = value;

@@ -193,7 +193,7 @@ public class MenuFrame extends javax.swing.JFrame {
 
         jPanel1.add(btnCrearViaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 350, -1, -1));
 
-        fondo.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 660));
+        fondo.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 660));
 
         jTabbedPane1.setBackground(new java.awt.Color(246, 252, 251));
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
@@ -292,7 +292,7 @@ public class MenuFrame extends javax.swing.JFrame {
         MenuInicio.setLayout(MenuInicioLayout);
         MenuInicioLayout.setHorizontalGroup(
             MenuInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 867, Short.MAX_VALUE)
+            .addGap(0, 868, Short.MAX_VALUE)
             .addGroup(MenuInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MenuInicioLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -462,7 +462,7 @@ public class MenuFrame extends javax.swing.JFrame {
         CrearOpinion.setLayout(CrearOpinionLayout);
         CrearOpinionLayout.setHorizontalGroup(
             CrearOpinionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelImage2, javax.swing.GroupLayout.DEFAULT_SIZE, 867, Short.MAX_VALUE)
+            .addComponent(panelImage2, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
         );
         CrearOpinionLayout.setVerticalGroup(
             CrearOpinionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -587,7 +587,7 @@ public class MenuFrame extends javax.swing.JFrame {
             CrearViajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearViajeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelImage3, javax.swing.GroupLayout.DEFAULT_SIZE, 855, Short.MAX_VALUE)
+                .addComponent(panelImage3, javax.swing.GroupLayout.DEFAULT_SIZE, 856, Short.MAX_VALUE)
                 .addContainerGap())
         );
         CrearViajeLayout.setVerticalGroup(

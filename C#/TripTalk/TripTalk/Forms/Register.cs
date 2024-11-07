@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Logging;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +17,7 @@ namespace TripTalk.Forms
     public partial class Register : Form
     {
         Usuario usuario = new Usuario();
+        private List<Usuario> listUsuarios = new List<Usuario>();
         public Register()
         {
             InitializeComponent();
@@ -46,7 +50,8 @@ namespace TripTalk.Forms
 
         private void crearUsuario()
         {
-
+            int id = listUsuarios.Count;
+            Usuario usuario = new Usuario(id, textNombre.Text, textApellidos.Text, textCorreo.Text, textPassword.Text);
         }
 
         private void textNombre_MouseDown(object sender, MouseEventArgs e)
@@ -78,11 +83,31 @@ namespace TripTalk.Forms
 
         private void textPassword_MouseDown(object sender, MouseEventArgs e)
         {
-            if (textPassword.Text.Equals("Password"))
+            if (textPassword.Text.Equals("Contraseña"))
             {
                 textPassword.Text = "";
                 textPassword.ForeColor = Color.Black;
                 textPassword.PasswordChar = '*';
+            }
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+            cargarUsuarios();
+        }
+
+        private void cargarUsuarios()
+        {
+            try
+            {
+                StreamReader sr = new StreamReader("C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnológico de Morelia\\5to Semestre\\TAP\\TripTalk\\Files\\usuarios.json");
+                string json = sr.ReadToEnd();
+                sr.Close();
+                listUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(json);
+            }
+            catch (Exception ex)
+            {
+                new Log().WriteException(ex);
             }
         }
     }

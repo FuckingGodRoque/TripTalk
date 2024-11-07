@@ -126,7 +126,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 39);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Resgitro";
+            this.label1.Text = "Registro";
             // 
             // btnCrear
             // 
@@ -161,6 +161,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Register";
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.Register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

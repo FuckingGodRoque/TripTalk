@@ -48,9 +48,7 @@ namespace TripTalk.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string user = textCorreo.Text;
-            string pass = textPassword.Text;
-            bool existe = false;
+            iniciarSesion();
 
 
         }
@@ -60,13 +58,13 @@ namespace TripTalk.Forms
             bool acceso = false;
             foreach (Usuario usuario in listUsuarios)
             {
-                if (usuario.User == textCorreo.Text)
+                if (usuario.Correo == textCorreo.Text)
                 {
                     if (usuario.Password == textPassword.Text)
                     {
                         acceso = true;
                         Console.WriteLine("contraseña correcta");
-                        //Mandar usuario al proximo form 
+                        new Menu(usuario).Show();
                         break;
                     }
                 }
@@ -78,7 +76,7 @@ namespace TripTalk.Forms
             }
             else
             {
-                textCorreo.Text = "Ingrese su nombre de usuario";
+                textCorreo.Text = "Ingrese su correo";
                 textCorreo.ForeColor = Color.Gray;
                 textPassword.Text = "********";
                 textPassword.ForeColor = Color.Gray;
@@ -127,6 +125,12 @@ namespace TripTalk.Forms
                 textCorreo.Text = "Ingrese su correo";
                 textCorreo.ForeColor = Color.Gray;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new Register().Show();
+            this.Hide();
         }
     }
 }
