@@ -19,6 +19,7 @@ namespace TripTalk.Forms
         private bool mouseD;
         private Point lastLocation;
         private List<Usuario> listUsuarios = new List<Usuario>();
+        private String ruta = "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnológico de Morelia\\5to Semestre\\TAP\\TripTalk\\Files\\";
         public Login()
         {
             InitializeComponent();
@@ -88,7 +89,7 @@ namespace TripTalk.Forms
         {
             try
             {
-                StreamReader sr = new StreamReader("C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnológico de Morelia\\5to Semestre\\TAP\\TripTalk\\Files\\usuarios.json");
+                StreamReader sr = new StreamReader(ruta +"usuarios.json");
                 string json = sr.ReadToEnd();
                 sr.Close();
                 listUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(json);
@@ -131,6 +132,11 @@ namespace TripTalk.Forms
         {
             new Register().Show();
             this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

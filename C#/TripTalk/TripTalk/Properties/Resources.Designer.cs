@@ -133,6 +133,16 @@ namespace TripTalk.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap barraNaranja60x20 {
+            get {
+                object obj = ResourceManager.GetObject("barraNaranja60x20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap botonBlancoSombra100x30 {
             get {
                 object obj = ResourceManager.GetObject("botonBlancoSombra100x30", resourceCulture);
@@ -166,6 +176,16 @@ namespace TripTalk.Properties {
         internal static System.Drawing.Bitmap botonGrisSombra100x30 {
             get {
                 object obj = ResourceManager.GetObject("botonGrisSombra100x30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close30x30 {
+            get {
+                object obj = ResourceManager.GetObject("close30x30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

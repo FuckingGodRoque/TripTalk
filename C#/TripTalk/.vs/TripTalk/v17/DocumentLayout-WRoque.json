@@ -1,0 +1,227 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|c:\\users\\daniel roque\\onedrive - instituto tecnol\u00F3gico de morelia\\5to semestre\\tap\\triptalk\\c#\\triptalk\\triptalk\\forms\\panelpublicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\forms\\panelpublicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\triptalk\\forms\\panelpublicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\forms\\panelpublicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\triptalk\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\triptalk\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\forms\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\triptalk\\clases\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\clases\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\triptalk\\clases\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\clases\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\triptalk\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\triptalk\\forms\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\forms\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\triptalk\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\triptalk\\forms\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\forms\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\triptalk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45E31091-B68E-44B2-8DD6-6D3333BE42DD}|TripTalk\\TripTalk.csproj|solutionrelative:triptalk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "panelPublicacion.cs",
+              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\panelPublicacion.cs",
+              "RelativeDocumentMoniker": "TripTalk\\Forms\\panelPublicacion.cs",
+              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\panelPublicacion.cs*",
+              "RelativeToolTip": "TripTalk\\Forms\\panelPublicacion.cs*",
+              "ViewState": "AQIAACYAAAAAAAAAAAAAwDYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T15:24:34.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Program.cs",
+              "RelativeDocumentMoniker": "TripTalk\\Program.cs",
+              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Program.cs",
+              "RelativeToolTip": "TripTalk\\Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAowBYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T13:50:30.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Register.cs",
+              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Register.cs",
+              "RelativeDocumentMoniker": "TripTalk\\Forms\\Register.cs",
+              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Register.cs",
+              "RelativeToolTip": "TripTalk\\Forms\\Register.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAUwE4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T04:49:20.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Login.cs",
+              "RelativeDocumentMoniker": "TripTalk\\Forms\\Login.cs",
+              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Login.cs",
+              "RelativeToolTip": "TripTalk\\Forms\\Login.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAABUAAACLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T04:36:36.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Menu.cs",
+              "RelativeDocumentMoniker": "TripTalk\\Forms\\Menu.cs",
+              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Menu.cs*",
+              "RelativeToolTip": "TripTalk\\Forms\\Menu.cs*",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAAC8AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T22:22:36.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Publicacion.cs",
+              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Clases\\Publicacion.cs",
+              "RelativeDocumentMoniker": "TripTalk\\Clases\\Publicacion.cs",
+              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Clases\\Publicacion.cs",
+              "RelativeToolTip": "TripTalk\\Clases\\Publicacion.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAqwCUAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T15:21:19.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Register.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Register.cs",
+              "RelativeDocumentMoniker": "TripTalk\\Forms\\Register.cs",
+              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Register.cs [Dise\u00F1o]",
+              "RelativeToolTip": "TripTalk\\Forms\\Register.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T04:11:21.347Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Login.cs",
+              "RelativeDocumentMoniker": "TripTalk\\Forms\\Login.cs",
+              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Login.cs [Dise\u00F1o]",
+              "RelativeToolTip": "TripTalk\\Forms\\Login.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T03:28:08.734Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Clases\\Usuario.cs",
+              "RelativeDocumentMoniker": "TripTalk\\Clases\\Usuario.cs",
+              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Clases\\Usuario.cs",
+              "RelativeToolTip": "TripTalk\\Clases\\Usuario.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAwwCgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T04:31:17.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Menu.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Menu.cs",
+              "RelativeDocumentMoniker": "TripTalk\\Forms\\Menu.cs",
+              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\Menu.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "TripTalk\\Forms\\Menu.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T06:01:47.88Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "6a25b83c-0ec5-496d-88e4-f635c8c82866",
+        "Display": 1,
+        "X": 602,
+        "Y": 349,
+        "Width": 974,
+        "Height": 503,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "panelPublicacion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\panelPublicacion.cs",
+              "RelativeDocumentMoniker": "TripTalk\\Forms\\panelPublicacion.cs",
+              "ToolTip": "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnol\u00F3gico de Morelia\\5to Semestre\\TAP\\TripTalk\\C#\\TripTalk\\TripTalk\\Forms\\panelPublicacion.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "TripTalk\\Forms\\panelPublicacion.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T07:10:03.362Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

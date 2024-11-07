@@ -236,7 +236,7 @@ public class LoginFrame extends javax.swing.JFrame {
         for(Usuario usuario: listUsuarios){
             if(usuario.getCorreo().equalsIgnoreCase(correo) && usuario.getPassword().equals(pwd)){
                 existe = true;
-                new MenuFrame().setVisible(true);
+                new MenuFrame(usuario).setVisible(true);
                 this.dispose();
                 break;
             }

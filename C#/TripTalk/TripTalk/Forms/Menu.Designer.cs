@@ -34,14 +34,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnViajes = new System.Windows.Forms.Button();
-            this.btnMisPublicaciones = new System.Windows.Forms.Button();
-            this.btnOpiniones = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnBack = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnPublicar = new System.Windows.Forms.Button();
             this.textFechas = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textEquipaje = new System.Windows.Forms.TextBox();
@@ -58,27 +52,34 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPublicar2 = new System.Windows.Forms.Button();
             this.textDetalles = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textCosto = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textLugar2 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnBack2 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnOfrecerViaje = new System.Windows.Forms.Button();
             this.btnCrearOp = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnViajes = new System.Windows.Forms.Button();
+            this.btnMisPublicaciones = new System.Windows.Forms.Button();
+            this.btnOpiniones = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnPublicar = new System.Windows.Forms.Button();
+            this.btnPublicar2 = new System.Windows.Forms.Button();
+            this.btnBack2 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelPublicaciones = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,12 +112,14 @@
             // 
             // button3
             // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Image = global::TripTalk.Properties.Resources.close30x30;
             this.button3.Location = new System.Drawing.Point(812, -2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(30, 30);
             this.button3.TabIndex = 13;
-            this.button3.Text = "X";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // tabControl1
             // 
@@ -131,6 +134,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panelPublicaciones);
             this.tabPage1.Controls.Add(this.btnViajes);
             this.tabPage1.Controls.Add(this.btnMisPublicaciones);
             this.tabPage1.Controls.Add(this.btnOpiniones);
@@ -142,49 +146,9 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnViajes
-            // 
-            this.btnViajes.BackColor = System.Drawing.Color.White;
-            this.btnViajes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnViajes.Image = global::TripTalk.Properties.Resources.botonBlancoSombra100x30;
-            this.btnViajes.Location = new System.Drawing.Point(113, 6);
-            this.btnViajes.Name = "btnViajes";
-            this.btnViajes.Size = new System.Drawing.Size(110, 38);
-            this.btnViajes.TabIndex = 5;
-            this.btnViajes.Text = "Viajes";
-            this.btnViajes.UseVisualStyleBackColor = false;
-            // 
-            // btnMisPublicaciones
-            // 
-            this.btnMisPublicaciones.BackColor = System.Drawing.Color.White;
-            this.btnMisPublicaciones.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMisPublicaciones.Image = global::TripTalk.Properties.Resources.botonBlancoSombra100x30;
-            this.btnMisPublicaciones.Location = new System.Drawing.Point(229, 6);
-            this.btnMisPublicaciones.Name = "btnMisPublicaciones";
-            this.btnMisPublicaciones.Size = new System.Drawing.Size(127, 38);
-            this.btnMisPublicaciones.TabIndex = 6;
-            this.btnMisPublicaciones.Text = "Mis publicaciones";
-            this.btnMisPublicaciones.UseVisualStyleBackColor = false;
-            // 
-            // btnOpiniones
-            // 
-            this.btnOpiniones.BackColor = System.Drawing.Color.White;
-            this.btnOpiniones.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOpiniones.ForeColor = System.Drawing.Color.White;
-            this.btnOpiniones.Image = global::TripTalk.Properties.Resources.botonGrisSombra100x30;
-            this.btnOpiniones.Location = new System.Drawing.Point(6, 6);
-            this.btnOpiniones.Name = "btnOpiniones";
-            this.btnOpiniones.Size = new System.Drawing.Size(101, 38);
-            this.btnOpiniones.TabIndex = 4;
-            this.btnOpiniones.Text = "Opiniones";
-            this.btnOpiniones.UseVisualStyleBackColor = false;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel3);
-            this.tabPage2.Controls.Add(this.btnBack);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.btnPublicar);
             this.tabPage2.Controls.Add(this.textFechas);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.textEquipaje);
@@ -199,6 +163,9 @@
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.textLugar);
             this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.btnBack);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.btnPublicar);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -214,43 +181,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(520, 2);
             this.panel3.TabIndex = 28;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Image = global::TripTalk.Properties.Resources.back;
-            this.btnBack.Location = new System.Drawing.Point(19, 20);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(40, 38);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnBack.TabIndex = 17;
-            this.btnBack.TabStop = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Image = global::TripTalk.Properties.Resources.barraDegradadoNaranja341x38;
-            this.label2.Location = new System.Drawing.Point(100, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(341, 38);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Opina sobre un lugar";
-            // 
-            // btnPublicar
-            // 
-            this.btnPublicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPublicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPublicar.ForeColor = System.Drawing.Color.White;
-            this.btnPublicar.Image = global::TripTalk.Properties.Resources.barraNaranja117x35;
-            this.btnPublicar.Location = new System.Drawing.Point(354, 382);
-            this.btnPublicar.Name = "btnPublicar";
-            this.btnPublicar.Size = new System.Drawing.Size(124, 38);
-            this.btnPublicar.TabIndex = 16;
-            this.btnPublicar.Text = "Publicar";
-            this.btnPublicar.UseVisualStyleBackColor = false;
-            this.btnPublicar.Click += new System.EventHandler(this.btnPublicar_Click);
             // 
             // textFechas
             // 
@@ -405,13 +335,13 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.panel1);
-            this.tabPage3.Controls.Add(this.btnPublicar2);
             this.tabPage3.Controls.Add(this.textDetalles);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.textCosto);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.textLugar2);
             this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.btnPublicar2);
             this.tabPage3.Controls.Add(this.btnBack2);
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -429,20 +359,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(520, 2);
             this.panel1.TabIndex = 27;
-            // 
-            // btnPublicar2
-            // 
-            this.btnPublicar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPublicar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPublicar2.ForeColor = System.Drawing.Color.White;
-            this.btnPublicar2.Image = global::TripTalk.Properties.Resources.barraNaranja117x35;
-            this.btnPublicar2.Location = new System.Drawing.Point(416, 371);
-            this.btnPublicar2.Name = "btnPublicar2";
-            this.btnPublicar2.Size = new System.Drawing.Size(124, 38);
-            this.btnPublicar2.TabIndex = 26;
-            this.btnPublicar2.Text = "Publicar";
-            this.btnPublicar2.UseVisualStyleBackColor = false;
-            this.btnPublicar2.Click += new System.EventHandler(this.btnPublicar2_Click);
             // 
             // textDetalles
             // 
@@ -475,6 +391,7 @@
             this.textCosto.TabIndex = 23;
             this.textCosto.Tag = "";
             this.textCosto.Text = "$$$";
+            this.textCosto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textCosto_MouseClick);
             // 
             // label10
             // 
@@ -498,6 +415,7 @@
             this.textLugar2.TabIndex = 21;
             this.textLugar2.Tag = "";
             this.textLugar2.Text = "Ejemplo; Guacamayas";
+            this.textLugar2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textLugar2_MouseClick);
             // 
             // label11
             // 
@@ -509,29 +427,6 @@
             this.label11.Size = new System.Drawing.Size(39, 13);
             this.label11.TabIndex = 20;
             this.label11.Text = "Lugar";
-            // 
-            // btnBack2
-            // 
-            this.btnBack2.Image = global::TripTalk.Properties.Resources.back;
-            this.btnBack2.Location = new System.Drawing.Point(19, 20);
-            this.btnBack2.Name = "btnBack2";
-            this.btnBack2.Size = new System.Drawing.Size(40, 38);
-            this.btnBack2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnBack2.TabIndex = 19;
-            this.btnBack2.TabStop = false;
-            this.btnBack2.Click += new System.EventHandler(this.btnBack2_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Image = global::TripTalk.Properties.Resources.barraDegradadoNaranja341x38;
-            this.label9.Location = new System.Drawing.Point(100, 20);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(327, 38);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "OFRECE UN VIAJE";
             // 
             // btnCerrarSesion
             // 
@@ -545,6 +440,7 @@
             this.btnCerrarSesion.TabIndex = 10;
             this.btnCerrarSesion.Text = "Cerrar Sesion";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // btnOfrecerViaje
             // 
@@ -583,6 +479,120 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnViajes
+            // 
+            this.btnViajes.BackColor = System.Drawing.Color.White;
+            this.btnViajes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnViajes.Image = global::TripTalk.Properties.Resources.botonBlancoSombra100x30;
+            this.btnViajes.Location = new System.Drawing.Point(113, 6);
+            this.btnViajes.Name = "btnViajes";
+            this.btnViajes.Size = new System.Drawing.Size(110, 38);
+            this.btnViajes.TabIndex = 5;
+            this.btnViajes.Text = "Viajes";
+            this.btnViajes.UseVisualStyleBackColor = false;
+            this.btnViajes.Click += new System.EventHandler(this.btnViajes_Click);
+            // 
+            // btnMisPublicaciones
+            // 
+            this.btnMisPublicaciones.BackColor = System.Drawing.Color.White;
+            this.btnMisPublicaciones.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMisPublicaciones.Image = global::TripTalk.Properties.Resources.botonBlancoSombra100x30;
+            this.btnMisPublicaciones.Location = new System.Drawing.Point(229, 6);
+            this.btnMisPublicaciones.Name = "btnMisPublicaciones";
+            this.btnMisPublicaciones.Size = new System.Drawing.Size(127, 38);
+            this.btnMisPublicaciones.TabIndex = 6;
+            this.btnMisPublicaciones.Text = "Mis publicaciones";
+            this.btnMisPublicaciones.UseVisualStyleBackColor = false;
+            this.btnMisPublicaciones.Click += new System.EventHandler(this.btnMisPublicaciones_Click);
+            // 
+            // btnOpiniones
+            // 
+            this.btnOpiniones.BackColor = System.Drawing.Color.White;
+            this.btnOpiniones.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOpiniones.ForeColor = System.Drawing.Color.White;
+            this.btnOpiniones.Image = global::TripTalk.Properties.Resources.botonGrisSombra100x30;
+            this.btnOpiniones.Location = new System.Drawing.Point(6, 6);
+            this.btnOpiniones.Name = "btnOpiniones";
+            this.btnOpiniones.Size = new System.Drawing.Size(101, 38);
+            this.btnOpiniones.TabIndex = 4;
+            this.btnOpiniones.Text = "Opiniones";
+            this.btnOpiniones.UseVisualStyleBackColor = false;
+            this.btnOpiniones.Click += new System.EventHandler(this.btnOpiniones_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Image = global::TripTalk.Properties.Resources.back;
+            this.btnBack.Location = new System.Drawing.Point(19, 20);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(40, 38);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnBack.TabIndex = 17;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Image = global::TripTalk.Properties.Resources.barraDegradadoNaranja341x38;
+            this.label2.Location = new System.Drawing.Point(100, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(341, 38);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Opina sobre un lugar";
+            // 
+            // btnPublicar
+            // 
+            this.btnPublicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPublicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPublicar.ForeColor = System.Drawing.Color.White;
+            this.btnPublicar.Image = global::TripTalk.Properties.Resources.barraNaranja117x35;
+            this.btnPublicar.Location = new System.Drawing.Point(354, 382);
+            this.btnPublicar.Name = "btnPublicar";
+            this.btnPublicar.Size = new System.Drawing.Size(124, 38);
+            this.btnPublicar.TabIndex = 16;
+            this.btnPublicar.Text = "Publicar";
+            this.btnPublicar.UseVisualStyleBackColor = false;
+            this.btnPublicar.Click += new System.EventHandler(this.btnPublicar_Click);
+            // 
+            // btnPublicar2
+            // 
+            this.btnPublicar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPublicar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPublicar2.ForeColor = System.Drawing.Color.White;
+            this.btnPublicar2.Image = global::TripTalk.Properties.Resources.barraNaranja117x35;
+            this.btnPublicar2.Location = new System.Drawing.Point(416, 371);
+            this.btnPublicar2.Name = "btnPublicar2";
+            this.btnPublicar2.Size = new System.Drawing.Size(124, 38);
+            this.btnPublicar2.TabIndex = 26;
+            this.btnPublicar2.Text = "Publicar";
+            this.btnPublicar2.UseVisualStyleBackColor = false;
+            this.btnPublicar2.Click += new System.EventHandler(this.btnPublicar2_Click);
+            // 
+            // btnBack2
+            // 
+            this.btnBack2.Image = global::TripTalk.Properties.Resources.back;
+            this.btnBack2.Location = new System.Drawing.Point(19, 20);
+            this.btnBack2.Name = "btnBack2";
+            this.btnBack2.Size = new System.Drawing.Size(40, 38);
+            this.btnBack2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnBack2.TabIndex = 19;
+            this.btnBack2.TabStop = false;
+            this.btnBack2.Click += new System.EventHandler(this.btnBack2_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Image = global::TripTalk.Properties.Resources.barraDegradadoNaranja341x38;
+            this.label9.Location = new System.Drawing.Point(100, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(327, 38);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "OFRECE UN VIAJE";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::TripTalk.Properties.Resources.panelBlancoRedondeado600;
@@ -591,6 +601,14 @@
             this.pictureBox2.Size = new System.Drawing.Size(648, 515);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
+            // 
+            // panelPublicaciones
+            // 
+            this.panelPublicaciones.AutoScroll = true;
+            this.panelPublicaciones.Location = new System.Drawing.Point(6, 59);
+            this.panelPublicaciones.Name = "panelPublicaciones";
+            this.panelPublicaciones.Size = new System.Drawing.Size(539, 396);
+            this.panelPublicaciones.TabIndex = 7;
             // 
             // Menu
             // 
@@ -615,11 +633,11 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -672,5 +690,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelPublicaciones;
     }
 }

@@ -50,7 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Pregunta.cs" />
     <Compile Include="Clases\Publicacion.cs" />
+    <Compile Include="Clases\Respuesta.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
@@ -63,6 +65,12 @@
     </Compile>
     <Compile Include="Forms\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PanelPregunta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\PanelPregunta.Designer.cs">
+      <DependentUpon>PanelPregunta.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\panelPublicacion.cs">
       <SubType>UserControl</SubType>
@@ -83,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PanelPregunta.resx">
+      <DependentUpon>PanelPregunta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\panelPublicacion.resx">
       <DependentUpon>panelPublicacion.cs</DependentUpon>
@@ -167,6 +178,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close30x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barraNaranja60x20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

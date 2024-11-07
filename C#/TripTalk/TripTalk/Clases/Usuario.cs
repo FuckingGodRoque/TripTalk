@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,12 +28,17 @@ namespace TripTalk.Clases
             this.correo = correo;
             rol = "npc";
         }
-
+        [JsonProperty("idUsuario")]
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
+        [JsonProperty("nombre")]
         public string Nombre { get => nombre; set => nombre = value; }
+        [JsonProperty("apellido")]
         public string Apellido { get => apellido; set => apellido = value; }
+        [JsonProperty("password")]
         public string Password { get => password; set => password = value; }
+        [JsonProperty("correo")]
         public string Correo { get => correo; set => correo = value; }
+        [JsonProperty("rol")]
         public string Rol { get => rol; set => rol = value; }
 
         public override string ToString()

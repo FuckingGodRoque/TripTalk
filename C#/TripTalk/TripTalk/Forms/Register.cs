@@ -16,8 +16,9 @@ namespace TripTalk.Forms
 {
     public partial class Register : Form
     {
-        Usuario usuario = new Usuario();
+        private Usuario usuario = new Usuario();
         private List<Usuario> listUsuarios = new List<Usuario>();
+        private String ruta = "C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnológico de Morelia\\5to Semestre\\TAP\\TripTalk\\Files\\";
         public Register()
         {
             InitializeComponent();
@@ -32,7 +33,10 @@ namespace TripTalk.Forms
                 usuario.Correo= textCorreo.Text;
                 usuario.Password= textPassword.Text;    
                 crearUsuario();
-                MessageBox.Show("Cuenta creada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cuenta creada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new Login().Show();
+                this.Dispose();
+
             }
             else
             {
@@ -52,7 +56,27 @@ namespace TripTalk.Forms
         {
             int id = listUsuarios.Count;
             Usuario usuario = new Usuario(id, textNombre.Text, textApellidos.Text, textCorreo.Text, textPassword.Text);
+            listUsuarios.Add(usuario); 
+            guardarUsuarios();
+            MessageBox.Show(textNombre.Text.ToUpper() + " " + textApellidos.Text.ToUpper() + " te has registrado exitosamente!");
+            new Login().Show();
+            this.Hide();
+            
         }
+
+        private void guardarUsuarios()
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(listUsuarios, Formatting.Indented);
+                File.WriteAllText(ruta + "usuarios.json", json);
+            }
+            catch (Exception ex)
+            {
+                new Log().WriteException(ex);
+            }
+        }
+
 
         private void textNombre_MouseDown(object sender, MouseEventArgs e)
         {
@@ -100,7 +124,7 @@ namespace TripTalk.Forms
         {
             try
             {
-                StreamReader sr = new StreamReader("C:\\Users\\DANIEL ROQUE\\OneDrive - Instituto Tecnológico de Morelia\\5to Semestre\\TAP\\TripTalk\\Files\\usuarios.json");
+                StreamReader sr = new StreamReader(ruta+"usuarios.json");
                 string json = sr.ReadToEnd();
                 sr.Close();
                 listUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(json);

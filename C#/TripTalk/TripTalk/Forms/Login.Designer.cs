@@ -32,9 +32,9 @@
             this.textPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -91,20 +91,11 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Password";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(331, -1);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(30, 30);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "X";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(335, 20);
+            this.panel1.Size = new System.Drawing.Size(332, 20);
             this.panel1.TabIndex = 10;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -120,6 +111,17 @@
             this.label3.Size = new System.Drawing.Size(198, 39);
             this.label3.TabIndex = 11;
             this.label3.Text = "Bienvenido";
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Image = global::TripTalk.Properties.Resources.close30x30;
+            this.button3.Location = new System.Drawing.Point(331, -1);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(30, 30);
+            this.button3.TabIndex = 9;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnRegistrar
             // 

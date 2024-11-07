@@ -1,12 +1,39 @@
 
 package com.mycompany.triptalk;
 
+import com.google.gson.Gson;
+import com.mycompany.triptalk.clases.Publicacion;
+import com.mycompany.triptalk.clases.Usuario;
+import java.awt.GridLayout;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.JSONParser;
+
 public class MenuFrame extends javax.swing.JFrame {
-
-
+    private ArrayList<Usuario> listUsuarios = new ArrayList<>();
+    private ArrayList<Publicacion> listPublicaciones = new ArrayList<>();
+    private Usuario usuarioActual;
+    private int feedIndex = 0;
+    private GridLayout grid = new GridLayout(1, 1);
+    
+    private String ruta = "C:\\Users\\arman\\Instituto Tecnológico de Morelia\\DANIEL ADRIAN ROQUE CORTES - Red social de sugerencia de viajes\\Files\\";
+    
     public MenuFrame() {
         initComponents();
         setLocationRelativeTo(null);
+    }
+    
+    public MenuFrame(Usuario usuarioActual){
+        initComponents();
+        setLocationRelativeTo(null);
+        this.usuarioActual = usuarioActual;
+        panelFeed.setLayout(grid);
     }
 
     /**
@@ -23,7 +50,7 @@ public class MenuFrame extends javax.swing.JFrame {
         logo = new org.edisoncor.gui.panel.PanelImage();
         labelNombre = new javax.swing.JLabel();
         labelApellido = new javax.swing.JLabel();
-        btnCrearViaje1 = new org.edisoncor.gui.panel.PanelImage();
+        btnCerrarSesion = new org.edisoncor.gui.panel.PanelImage();
         jLabel3 = new javax.swing.JLabel();
         btnCrearOpinion = new org.edisoncor.gui.panel.PanelImage();
         jLabel1 = new javax.swing.JLabel();
@@ -32,14 +59,14 @@ public class MenuFrame extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         MenuInicio = new javax.swing.JPanel();
         MenuPrincipal = new org.edisoncor.gui.panel.PanelImage();
-        panelImage1 = new org.edisoncor.gui.panel.PanelImage();
+        panelImageOpinionBtn = new org.edisoncor.gui.panel.PanelImage();
         btnOpiniones = new javax.swing.JLabel();
-        panelImage6 = new org.edisoncor.gui.panel.PanelImage();
+        panelImageViajesBtn = new org.edisoncor.gui.panel.PanelImage();
         btnViajes = new javax.swing.JLabel();
-        panelImage7 = new org.edisoncor.gui.panel.PanelImage();
+        panelImageMisPublicacionesBtn = new org.edisoncor.gui.panel.PanelImage();
         btnMisPublicaciones = new javax.swing.JLabel();
         scrollPrincipal = new javax.swing.JScrollPane();
-        jPanel2 = new javax.swing.JPanel();
+        panelFeed = new javax.swing.JPanel();
         CrearOpinion = new javax.swing.JPanel();
         panelImage2 = new org.edisoncor.gui.panel.PanelImage();
         jLabel4 = new javax.swing.JLabel();
@@ -83,9 +110,17 @@ public class MenuFrame extends javax.swing.JFrame {
         panelImage11 = new org.edisoncor.gui.panel.PanelImage();
         jLabel16 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1070, 660));
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         fondo.setForeground(new java.awt.Color(255, 255, 255));
@@ -121,25 +156,31 @@ public class MenuFrame extends javax.swing.JFrame {
         labelApellido.setText("APELLIDOS");
         jPanel1.add(labelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 200, 50));
 
-        btnCrearViaje1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botonBlancoSombra.png"))); // NOI18N
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botonBlancoSombra.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 173, 172));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Cerrar Sesión");
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
-        javax.swing.GroupLayout btnCrearViaje1Layout = new javax.swing.GroupLayout(btnCrearViaje1);
-        btnCrearViaje1.setLayout(btnCrearViaje1Layout);
-        btnCrearViaje1Layout.setHorizontalGroup(
-            btnCrearViaje1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout btnCerrarSesionLayout = new javax.swing.GroupLayout(btnCerrarSesion);
+        btnCerrarSesion.setLayout(btnCerrarSesionLayout);
+        btnCerrarSesionLayout.setHorizontalGroup(
+            btnCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
-        btnCrearViaje1Layout.setVerticalGroup(
-            btnCrearViaje1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        btnCerrarSesionLayout.setVerticalGroup(
+            btnCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(btnCrearViaje1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 200, 50));
+        jPanel1.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 200, 50));
 
         btnCrearOpinion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/barraNaranja.png"))); // NOI18N
 
@@ -147,6 +188,7 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Crear Opinión");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -174,6 +216,7 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ofrecer Viaje");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -204,10 +247,10 @@ public class MenuFrame extends javax.swing.JFrame {
         MenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/panelBlancoRedondeado.png"))); // NOI18N
         MenuPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botonGrisSombra.png"))); // NOI18N
+        panelImageOpinionBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botonGrisSombra.png"))); // NOI18N
 
         btnOpiniones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnOpiniones.setForeground(new java.awt.Color(255, 255, 255));
+        btnOpiniones.setForeground(new java.awt.Color(102, 102, 102));
         btnOpiniones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnOpiniones.setText("Opiniones");
         btnOpiniones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -217,20 +260,20 @@ public class MenuFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout panelImage1Layout = new javax.swing.GroupLayout(panelImage1);
-        panelImage1.setLayout(panelImage1Layout);
-        panelImage1Layout.setHorizontalGroup(
-            panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelImageOpinionBtnLayout = new javax.swing.GroupLayout(panelImageOpinionBtn);
+        panelImageOpinionBtn.setLayout(panelImageOpinionBtnLayout);
+        panelImageOpinionBtnLayout.setHorizontalGroup(
+            panelImageOpinionBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnOpiniones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
-        panelImage1Layout.setVerticalGroup(
-            panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelImageOpinionBtnLayout.setVerticalGroup(
+            panelImageOpinionBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnOpiniones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        MenuPrincipal.add(panelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 140, 40));
+        MenuPrincipal.add(panelImageOpinionBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 140, 40));
 
-        panelImage6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botonBlancoSombra.png"))); // NOI18N
+        panelImageViajesBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botonBlancoSombra.png"))); // NOI18N
 
         btnViajes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnViajes.setForeground(new java.awt.Color(102, 102, 102));
@@ -243,20 +286,20 @@ public class MenuFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout panelImage6Layout = new javax.swing.GroupLayout(panelImage6);
-        panelImage6.setLayout(panelImage6Layout);
-        panelImage6Layout.setHorizontalGroup(
-            panelImage6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelImageViajesBtnLayout = new javax.swing.GroupLayout(panelImageViajesBtn);
+        panelImageViajesBtn.setLayout(panelImageViajesBtnLayout);
+        panelImageViajesBtnLayout.setHorizontalGroup(
+            panelImageViajesBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnViajes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
-        panelImage6Layout.setVerticalGroup(
-            panelImage6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelImageViajesBtnLayout.setVerticalGroup(
+            panelImageViajesBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnViajes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        MenuPrincipal.add(panelImage6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 140, 40));
+        MenuPrincipal.add(panelImageViajesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 140, 40));
 
-        panelImage7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botonBlancoSombra.png"))); // NOI18N
+        panelImageMisPublicacionesBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botonBlancoSombra.png"))); // NOI18N
 
         btnMisPublicaciones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnMisPublicaciones.setForeground(new java.awt.Color(102, 102, 102));
@@ -269,37 +312,37 @@ public class MenuFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout panelImage7Layout = new javax.swing.GroupLayout(panelImage7);
-        panelImage7.setLayout(panelImage7Layout);
-        panelImage7Layout.setHorizontalGroup(
-            panelImage7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelImageMisPublicacionesBtnLayout = new javax.swing.GroupLayout(panelImageMisPublicacionesBtn);
+        panelImageMisPublicacionesBtn.setLayout(panelImageMisPublicacionesBtnLayout);
+        panelImageMisPublicacionesBtnLayout.setHorizontalGroup(
+            panelImageMisPublicacionesBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnMisPublicaciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
-        panelImage7Layout.setVerticalGroup(
-            panelImage7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelImageMisPublicacionesBtnLayout.setVerticalGroup(
+            panelImageMisPublicacionesBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnMisPublicaciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        MenuPrincipal.add(panelImage7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 140, 40));
+        MenuPrincipal.add(panelImageMisPublicacionesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 140, 40));
 
         scrollPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         scrollPrincipal.setBorder(null);
         scrollPrincipal.setForeground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        panelFeed.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelFeedLayout = new javax.swing.GroupLayout(panelFeed);
+        panelFeed.setLayout(panelFeedLayout);
+        panelFeedLayout.setHorizontalGroup(
+            panelFeedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 800, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelFeedLayout.setVerticalGroup(
+            panelFeedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 540, Short.MAX_VALUE)
         );
 
-        scrollPrincipal.setViewportView(jPanel2);
+        scrollPrincipal.setViewportView(panelFeed);
 
         MenuPrincipal.add(scrollPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 800, 540));
 
@@ -429,13 +472,12 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel10.setText("Mejores fechas para este viaje");
         panelImage2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 290, -1));
 
-        txtFielOPFechas.setEditable(false);
         txtFielOPFechas.setBackground(new java.awt.Color(255, 240, 222));
         txtFielOPFechas.setColumns(20);
         txtFielOPFechas.setRows(5);
         jScrollPane3.setViewportView(txtFielOPFechas);
 
-        panelImage2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 350, 70));
+        panelImage2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 350, 90));
 
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back.png"))); // NOI18N
         btnAtras.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -464,6 +506,11 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Publicar");
         jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelImage8Layout = new javax.swing.GroupLayout(panelImage8);
         panelImage8.setLayout(panelImage8Layout);
@@ -592,6 +639,11 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Publicar");
         jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelImage11Layout = new javax.swing.GroupLayout(panelImage11);
         panelImage11.setLayout(panelImage11Layout);
@@ -658,15 +710,149 @@ public class MenuFrame extends javax.swing.JFrame {
 
     private void btnOpinionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOpinionesMouseClicked
         // MOSTRAR TODAS LAS OPINIONES
+        feedIndex=0;
+        panelImageOpinionBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonGrisSombra.png")));
+        panelImageViajesBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonBlancoSombra.png")));
+        panelImageMisPublicacionesBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonBlancoSombra.png")));
+        fondo.updateUI();
+        ActualizarFeed();
     }//GEN-LAST:event_btnOpinionesMouseClicked
 
     private void btnViajesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnViajesMouseClicked
         // MOSTRAR VIAJES OFRECIDOS POR ADMIN
+        feedIndex=1;
+        panelImageOpinionBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonBlancoSombra.png")));
+        panelImageViajesBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonGrisSombra.png")));
+        panelImageMisPublicacionesBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonBlancoSombra.png")));
+        fondo.updateUI();
+        ActualizarFeed();
     }//GEN-LAST:event_btnViajesMouseClicked
 
     private void btnMisPublicacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMisPublicacionesMouseClicked
         // MOSTRAR MIS PUBLICACIONES
+        feedIndex=2;
+        panelImageOpinionBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonBlancoSombra.png")));
+        panelImageViajesBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonBlancoSombra.png")));
+        panelImageMisPublicacionesBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonGrisSombra.png")));
+        fondo.updateUI();
+        ActualizarFeed();
     }//GEN-LAST:event_btnMisPublicacionesMouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // Cerrar sesión
+        this.dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // Cerrar MENU
+        GuardarPublicaciones();
+        new LoginFrame().setVisible(true);
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // FRAME SE ABRE
+        CargarUsuarios();
+        CargarPublicaciones();
+        labelNombre.setText(usuarioActual.getNombre());
+        labelApellido.setText(usuarioActual.getApellido());
+        
+        //SI NO ES ADMIN, ocultar ofrecer viaje
+        if(usuarioActual.getRol().equalsIgnoreCase("npc")){
+            btnCrearViaje.setVisible(false); //boton
+            jTabbedPane1.remove(2); //pestaña para crear viajes
+        }
+        ActualizarFeed();
+        
+    }//GEN-LAST:event_formWindowOpened
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        // Publicar Opinion
+        if (txtFieldOPLugar.getText().trim().isEmpty() ||
+           txtFielOPEquipaje.getText().trim().isEmpty() ||
+           txtFielOPLugar1.getText().trim().isEmpty() ||
+           txtFielOPLugar2.getText().trim().isEmpty() ||
+           txtFielOPLugar3.getText().trim().isEmpty() ||
+           txtFielOPObstaculo.getText().trim().isEmpty() ||
+           txtFielOPPresupuesto.getText().trim().isEmpty() ||
+           txtFielOPFechas.getText().trim().isEmpty()
+        ){
+            JOptionPane.showMessageDialog(null, "¡Debes rellenar todos los campos!");
+        }
+        else{
+            int id=listPublicaciones.size();
+            Publicacion publicacion = new Publicacion(
+                id,
+                usuarioActual.getIdUsuario(),
+                txtFieldOPLugar.getText(),
+                txtFielOPPresupuesto.getText(),
+                txtFielOPObstaculo.getText(),
+                txtFielOPLugar1.getText(),  // lugar recomendado 1
+                txtFielOPLugar2.getText(),  // lugar recomendado 2
+                txtFielOPLugar3.getText(),  // lugar recomendado 3
+                txtFielOPEquipaje.getText(),
+                txtFielOPFechas.getText(),
+                "opinion"  // tipo
+            );
+            listPublicaciones.add(publicacion);
+            GuardarPublicaciones();
+            LimpiarCrearOpinion();
+            jTabbedPane1.setSelectedIndex(0);
+            ActualizarFeed();
+        }
+    }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+        if(txtFieldVICosto.getText().trim().isEmpty() ||
+           txtFieldVIDetalles.getText().trim().isEmpty() ||
+           txtFieldVILugar.getText().trim().isEmpty()
+        )
+        {
+            JOptionPane.showMessageDialog(null, "¡Debes rellenar todos los campos!");
+        }
+        else{
+            int id=listPublicaciones.size();
+            Publicacion publicacion = new Publicacion(
+                id,
+                usuarioActual.getIdUsuario(),
+                txtFieldVILugar.getText(), 
+                txtFieldVICosto.getText(), 
+                txtFieldVIDetalles.getText(), 
+                "viaje"
+            );
+            listPublicaciones.add(publicacion);
+            GuardarPublicaciones();
+            LimpiarCrearViaje();
+            jTabbedPane1.setSelectedIndex(0);
+            ActualizarFeed();
+        }
+    }//GEN-LAST:event_jLabel16MouseClicked
+    
+    public void ActualizarFeed(){
+        CargarPublicaciones();
+        panelFeed.removeAll();
+        grid.setRows(listPublicaciones.size());
+        for (Publicacion publicacion : listPublicaciones) {
+            boolean valida=false;
+            String tipo;
+            if (feedIndex==0){
+                if (publicacion.getTipo().equalsIgnoreCase("opinion")) valida =true;
+            }
+            else if(feedIndex==1){
+                if (publicacion.getTipo().equalsIgnoreCase("viaje")) valida = true;
+            }
+            else{
+                if (publicacion.getIdUsuario()==usuarioActual.getIdUsuario()) valida = true;
+            }
+
+            if(valida){
+                Usuario usuarioPublicacion = obtenerUsuario(publicacion.getIdUsuario());
+                PanelPublicacion panelPublicacion = new PanelPublicacion(publicacion, usuarioPublicacion);
+                panelFeed.add(panelPublicacion);
+                System.out.println("PUBLI: "+publicacion.getIdPublicacion());
+            }
+        }
+        panelFeed.updateUI();
+    }
     
     public void LimpiarCrearViaje(){
         txtFieldVICosto.setText("");
@@ -684,6 +870,85 @@ public class MenuFrame extends javax.swing.JFrame {
         txtFielOPPresupuesto.setText("");
         txtFielOPFechas.setText("");
     }
+    
+    public void CargarUsuarios(){
+        try {
+            BufferedReader br = new BufferedReader(
+                new FileReader(ruta+"usuarios.json")
+            );
+            String lectura=null;
+            String resultado="";
+            while((lectura=br.readLine()) != null){
+                resultado +=lectura;
+            }
+            br.close();
+
+            JSONParser parser = new JSONParser();
+            JSONArray jsonArray = (JSONArray)parser.parse(resultado);
+            listUsuarios.clear();
+            for (int i = 0; i < jsonArray.size(); i++) {
+                Usuario user = new Gson().fromJson(
+                    jsonArray.get(i).toString(), Usuario.class
+                );
+
+                listUsuarios.add(user);
+            }
+        } catch (Exception e) {
+            System.out.println("No se cargaron los Usuarios del json correctamente");
+        }
+    }
+    
+    public void CargarPublicaciones(){
+        try {
+            BufferedReader br = new BufferedReader(
+                new FileReader(ruta+"publicaciones.json")
+            );
+            String lectura=null;
+            String resultado="";
+            while((lectura=br.readLine()) != null){
+                resultado +=lectura;
+            }
+            br.close();
+
+            JSONParser parser = new JSONParser();
+            JSONArray jsonArray = (JSONArray)parser.parse(resultado);
+            listPublicaciones.clear();
+            for (int i = 0; i < jsonArray.size(); i++) {
+                Publicacion publicacion = new Gson().fromJson(
+                    jsonArray.get(i).toString(), Publicacion.class
+                );
+
+                listPublicaciones.add(publicacion);
+            }
+        } catch (Exception e) {
+            System.out.println("No se cargaron las publicaciones del json correctamente");
+        }
+    }
+    
+    public void GuardarPublicaciones(){
+        try {
+            BufferedWriter bw = new BufferedWriter(
+                new FileWriter(ruta+"publicaciones.json",false)
+            );
+            String json = new Gson().toJson(listPublicaciones);
+            
+            bw.write(json);
+            bw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public Usuario obtenerUsuario(int idUsuario) {
+        CargarUsuarios();
+        for (Usuario usuario : listUsuarios) {
+            if (usuario.getIdUsuario() == idUsuario) {
+                return usuario;
+            }
+        }
+        return null; // Retorna null si no se encuentra el usuario
+    }
+
     
     /**
      * @param args the command line arguments
@@ -727,9 +992,9 @@ public class MenuFrame extends javax.swing.JFrame {
     private org.edisoncor.gui.panel.PanelImage MenuPrincipal;
     private org.edisoncor.gui.panel.PanelImage btnAtras;
     private org.edisoncor.gui.panel.PanelImage btnAtras1;
+    private org.edisoncor.gui.panel.PanelImage btnCerrarSesion;
     private org.edisoncor.gui.panel.PanelImage btnCrearOpinion;
     private org.edisoncor.gui.panel.PanelImage btnCrearViaje;
-    private org.edisoncor.gui.panel.PanelImage btnCrearViaje1;
     private javax.swing.JLabel btnMisPublicaciones;
     private javax.swing.JLabel btnOpiniones;
     private javax.swing.JLabel btnViajes;
@@ -751,7 +1016,6 @@ public class MenuFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -762,17 +1026,18 @@ public class MenuFrame extends javax.swing.JFrame {
     private javax.swing.JLabel labelApellido;
     private javax.swing.JLabel labelNombre;
     private org.edisoncor.gui.panel.PanelImage logo;
-    private org.edisoncor.gui.panel.PanelImage panelImage1;
+    private javax.swing.JPanel panelFeed;
     private org.edisoncor.gui.panel.PanelImage panelImage10;
     private org.edisoncor.gui.panel.PanelImage panelImage11;
     private org.edisoncor.gui.panel.PanelImage panelImage2;
     private org.edisoncor.gui.panel.PanelImage panelImage3;
     private org.edisoncor.gui.panel.PanelImage panelImage4;
     private org.edisoncor.gui.panel.PanelImage panelImage5;
-    private org.edisoncor.gui.panel.PanelImage panelImage6;
-    private org.edisoncor.gui.panel.PanelImage panelImage7;
     private org.edisoncor.gui.panel.PanelImage panelImage8;
     private org.edisoncor.gui.panel.PanelImage panelImage9;
+    private org.edisoncor.gui.panel.PanelImage panelImageMisPublicacionesBtn;
+    private org.edisoncor.gui.panel.PanelImage panelImageOpinionBtn;
+    private org.edisoncor.gui.panel.PanelImage panelImageViajesBtn;
     private javax.swing.JScrollPane scrollPrincipal;
     private javax.swing.JTextArea txtFielOPEquipaje;
     private javax.swing.JTextArea txtFielOPFechas;

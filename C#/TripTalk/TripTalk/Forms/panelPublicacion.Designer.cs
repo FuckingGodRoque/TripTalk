@@ -46,7 +46,17 @@
             this.btnComentarios = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBoxOV = new System.Windows.Forms.PictureBox();
+            this.labelOV = new System.Windows.Forms.Label();
+            this.labelOVUsuario = new System.Windows.Forms.Label();
+            this.labelOVLugar = new System.Windows.Forms.Label();
+            this.labelOVCosto = new System.Windows.Forms.Label();
+            this.labelOV1 = new System.Windows.Forms.Label();
+            this.panelOV = new System.Windows.Forms.Panel();
+            this.textOVDetalles = new System.Windows.Forms.TextBox();
+            this.labelOV3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOV)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -204,6 +214,7 @@
             this.btnComentarios.TabIndex = 15;
             this.btnComentarios.Text = "Ver comentarios";
             this.btnComentarios.UseVisualStyleBackColor = true;
+            this.btnComentarios.Click += new System.EventHandler(this.btnComentarios_Click);
             // 
             // panel1
             // 
@@ -221,10 +232,110 @@
             this.panel2.Size = new System.Drawing.Size(526, 2);
             this.panel2.TabIndex = 17;
             // 
+            // pictureBoxOV
+            // 
+            this.pictureBoxOV.Image = global::TripTalk.Properties.Resources.panelBlancoRedondeado;
+            this.pictureBoxOV.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxOV.Name = "pictureBoxOV";
+            this.pictureBoxOV.Size = new System.Drawing.Size(560, 326);
+            this.pictureBoxOV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxOV.TabIndex = 18;
+            this.pictureBoxOV.TabStop = false;
+            // 
+            // labelOV
+            // 
+            this.labelOV.AutoSize = true;
+            this.labelOV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOV.Location = new System.Drawing.Point(253, 29);
+            this.labelOV.Name = "labelOV";
+            this.labelOV.Size = new System.Drawing.Size(92, 13);
+            this.labelOV.TabIndex = 19;
+            this.labelOV.Text = "Viaje ofrecido por:";
+            this.labelOV.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelOVUsuario
+            // 
+            this.labelOVUsuario.AutoSize = true;
+            this.labelOVUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOVUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(101)))), ((int)(((byte)(255)))));
+            this.labelOVUsuario.Location = new System.Drawing.Point(233, 49);
+            this.labelOVUsuario.Name = "labelOVUsuario";
+            this.labelOVUsuario.Size = new System.Drawing.Size(136, 20);
+            this.labelOVUsuario.TabIndex = 20;
+            this.labelOVUsuario.Text = "Viaje ofrecido por:";
+            this.labelOVUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // labelOVLugar
+            // 
+            this.labelOVLugar.AutoSize = true;
+            this.labelOVLugar.BackColor = System.Drawing.Color.White;
+            this.labelOVLugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOVLugar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(102)))));
+            this.labelOVLugar.Location = new System.Drawing.Point(23, 88);
+            this.labelOVLugar.Name = "labelOVLugar";
+            this.labelOVLugar.Size = new System.Drawing.Size(105, 38);
+            this.labelOVLugar.TabIndex = 21;
+            this.labelOVLugar.Text = "Lugar";
+            // 
+            // labelOVCosto
+            // 
+            this.labelOVCosto.AutoSize = true;
+            this.labelOVCosto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.labelOVCosto.Location = new System.Drawing.Point(327, 151);
+            this.labelOVCosto.Name = "labelOVCosto";
+            this.labelOVCosto.Size = new System.Drawing.Size(19, 13);
+            this.labelOVCosto.TabIndex = 23;
+            this.labelOVCosto.Text = "$$";
+            // 
+            // labelOV1
+            // 
+            this.labelOV1.AutoSize = true;
+            this.labelOV1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOV1.Location = new System.Drawing.Point(246, 151);
+            this.labelOV1.Name = "labelOV1";
+            this.labelOV1.Size = new System.Drawing.Size(81, 13);
+            this.labelOV1.TabIndex = 22;
+            this.labelOV1.Text = "Presupuesto:";
+            // 
+            // panelOV
+            // 
+            this.panelOV.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelOV.Location = new System.Drawing.Point(15, 182);
+            this.panelOV.Name = "panelOV";
+            this.panelOV.Size = new System.Drawing.Size(526, 2);
+            this.panelOV.TabIndex = 26;
+            // 
+            // textOVDetalles
+            // 
+            this.textOVDetalles.Location = new System.Drawing.Point(30, 214);
+            this.textOVDetalles.Multiline = true;
+            this.textOVDetalles.Name = "textOVDetalles";
+            this.textOVDetalles.Size = new System.Drawing.Size(496, 85);
+            this.textOVDetalles.TabIndex = 25;
+            // 
+            // labelOV3
+            // 
+            this.labelOV3.AutoSize = true;
+            this.labelOV3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOV3.Location = new System.Drawing.Point(30, 194);
+            this.labelOV3.Name = "labelOV3";
+            this.labelOV3.Size = new System.Drawing.Size(105, 13);
+            this.labelOV3.TabIndex = 24;
+            this.labelOV3.Text = "Detalles del viaje";
+            // 
             // panelPublicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelOV);
+            this.Controls.Add(this.textOVDetalles);
+            this.Controls.Add(this.labelOV3);
+            this.Controls.Add(this.labelOVCosto);
+            this.Controls.Add(this.labelOV1);
+            this.Controls.Add(this.labelOVLugar);
+            this.Controls.Add(this.labelOVUsuario);
+            this.Controls.Add(this.labelOV);
+            this.Controls.Add(this.pictureBoxOV);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnComentarios);
@@ -246,6 +357,7 @@
             this.Name = "panelPublicacion";
             this.Size = new System.Drawing.Size(560, 326);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +383,14 @@
         private System.Windows.Forms.Button btnComentarios;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBoxOV;
+        private System.Windows.Forms.Label labelOV;
+        private System.Windows.Forms.Label labelOVUsuario;
+        private System.Windows.Forms.Label labelOVLugar;
+        private System.Windows.Forms.Label labelOVCosto;
+        private System.Windows.Forms.Label labelOV1;
+        private System.Windows.Forms.Panel panelOV;
+        private System.Windows.Forms.TextBox textOVDetalles;
+        private System.Windows.Forms.Label labelOV3;
     }
 }
