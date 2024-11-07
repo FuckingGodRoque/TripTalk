@@ -46,28 +46,42 @@ public class MenuFrame extends javax.swing.JFrame {
         panelImage4 = new org.edisoncor.gui.panel.PanelImage();
         panelImage5 = new org.edisoncor.gui.panel.PanelImage();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtFieldOPLugar = new javax.swing.JTextField();
+        txtFielOPPresupuesto = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtFielOPLugar1 = new javax.swing.JTextField();
+        txtFielOPLugar2 = new javax.swing.JTextField();
+        txtFielOPLugar3 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtFielOPObstaculo = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        txtFielOPEquipaje = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        txtFielOPFechas = new javax.swing.JTextArea();
         btnAtras = new org.edisoncor.gui.panel.PanelImage();
         panelImage8 = new org.edisoncor.gui.panel.PanelImage();
         jLabel11 = new javax.swing.JLabel();
         CrearViaje = new javax.swing.JPanel();
         panelImage3 = new org.edisoncor.gui.panel.PanelImage();
+        jLabel12 = new javax.swing.JLabel();
+        panelImage9 = new org.edisoncor.gui.panel.PanelImage();
+        panelImage10 = new org.edisoncor.gui.panel.PanelImage();
+        jLabel13 = new javax.swing.JLabel();
+        txtFieldVILugar = new javax.swing.JTextField();
+        txtFieldVICosto = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel15 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtFieldVIDetalles = new javax.swing.JTextArea();
+        btnAtras1 = new org.edisoncor.gui.panel.PanelImage();
+        panelImage11 = new org.edisoncor.gui.panel.PanelImage();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1070, 660));
@@ -133,6 +147,11 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Crear Opinión");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnCrearOpinionLayout = new javax.swing.GroupLayout(btnCrearOpinion);
         btnCrearOpinion.setLayout(btnCrearOpinionLayout);
@@ -155,6 +174,11 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ofrecer Viaje");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnCrearViajeLayout = new javax.swing.GroupLayout(btnCrearViaje);
         btnCrearViaje.setLayout(btnCrearViajeLayout);
@@ -333,13 +357,13 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel5.setText("¿Qué lugar visitaste?");
         panelImage2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 150, -1));
 
-        jTextField1.setBackground(new java.awt.Color(255, 240, 222));
-        jTextField1.setToolTipText("Escribe el nombre del lugar");
-        panelImage2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 740, -1));
+        txtFieldOPLugar.setBackground(new java.awt.Color(255, 240, 222));
+        txtFieldOPLugar.setToolTipText("Escribe el nombre del lugar");
+        panelImage2.add(txtFieldOPLugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 740, -1));
 
-        jTextField2.setBackground(new java.awt.Color(255, 240, 222));
-        jTextField2.setToolTipText("Escribe una cantidad");
-        panelImage2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 150, -1));
+        txtFielOPPresupuesto.setBackground(new java.awt.Color(255, 240, 222));
+        txtFielOPPresupuesto.setToolTipText("Escribe una cantidad");
+        panelImage2.add(txtFielOPPresupuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 150, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(189, 75, 0));
@@ -352,24 +376,24 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel7.setText("Principal obstáculo durante el viaje");
         panelImage2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 290, -1));
 
-        jTextField3.setBackground(new java.awt.Color(255, 240, 222));
-        panelImage2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 230, -1));
+        txtFielOPLugar1.setBackground(new java.awt.Color(255, 240, 222));
+        panelImage2.add(txtFielOPLugar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 230, -1));
 
-        jTextField4.setBackground(new java.awt.Color(255, 240, 222));
-        panelImage2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 270, -1));
+        txtFielOPLugar2.setBackground(new java.awt.Color(255, 240, 222));
+        panelImage2.add(txtFielOPLugar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 270, -1));
 
-        jTextField5.setBackground(new java.awt.Color(255, 240, 222));
-        panelImage2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, 230, -1));
+        txtFielOPLugar3.setBackground(new java.awt.Color(255, 240, 222));
+        panelImage2.add(txtFielOPLugar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, 230, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(189, 75, 0));
         jLabel8.setText("Recomienda tres sitios para visitar al hacer este viaje ");
         panelImage2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
 
-        jTextArea1.setBackground(new java.awt.Color(255, 240, 222));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtFielOPObstaculo.setBackground(new java.awt.Color(255, 240, 222));
+        txtFielOPObstaculo.setColumns(20);
+        txtFielOPObstaculo.setRows(5);
+        jScrollPane1.setViewportView(txtFielOPObstaculo);
 
         panelImage2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 350, -1));
 
@@ -378,10 +402,10 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel9.setText("¿Qué recomiendas llevar en el equipaje?");
         panelImage2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, 290, -1));
 
-        jTextArea2.setBackground(new java.awt.Color(255, 240, 222));
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        txtFielOPEquipaje.setBackground(new java.awt.Color(255, 240, 222));
+        txtFielOPEquipaje.setColumns(20);
+        txtFielOPEquipaje.setRows(5);
+        jScrollPane2.setViewportView(txtFielOPEquipaje);
 
         panelImage2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 390, 340, -1));
 
@@ -390,11 +414,11 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel10.setText("Mejores fechas para este viaje");
         panelImage2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 290, -1));
 
-        jTextArea3.setEditable(false);
-        jTextArea3.setBackground(new java.awt.Color(255, 240, 222));
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
+        txtFielOPFechas.setEditable(false);
+        txtFielOPFechas.setBackground(new java.awt.Color(255, 240, 222));
+        txtFielOPFechas.setColumns(20);
+        txtFielOPFechas.setRows(5);
+        jScrollPane3.setViewportView(txtFielOPFechas);
 
         panelImage2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 350, 70));
 
@@ -454,6 +478,109 @@ public class MenuFrame extends javax.swing.JFrame {
         panelImage3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/panelBlancoRedondeado.png"))); // NOI18N
         panelImage3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("OFRECE UN VIAJE");
+        panelImage3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 490, 50));
+
+        panelImage9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/barraNaranja.png"))); // NOI18N
+
+        javax.swing.GroupLayout panelImage9Layout = new javax.swing.GroupLayout(panelImage9);
+        panelImage9.setLayout(panelImage9Layout);
+        panelImage9Layout.setHorizontalGroup(
+            panelImage9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panelImage9Layout.setVerticalGroup(
+            panelImage9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        panelImage3.add(panelImage9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 280, 50));
+
+        panelImage10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/barraNaranja.png"))); // NOI18N
+
+        javax.swing.GroupLayout panelImage10Layout = new javax.swing.GroupLayout(panelImage10);
+        panelImage10.setLayout(panelImage10Layout);
+        panelImage10Layout.setHorizontalGroup(
+            panelImage10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panelImage10Layout.setVerticalGroup(
+            panelImage10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        panelImage3.add(panelImage10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 320, 50));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(189, 75, 0));
+        jLabel13.setText("Lugar");
+        panelImage3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 150, -1));
+
+        txtFieldVILugar.setBackground(new java.awt.Color(255, 240, 222));
+        txtFieldVILugar.setToolTipText("Escribe el nombre del lugar");
+        panelImage3.add(txtFieldVILugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 750, -1));
+
+        txtFieldVICosto.setBackground(new java.awt.Color(255, 240, 222));
+        txtFieldVICosto.setToolTipText("Escribe una cantidad");
+        panelImage3.add(txtFieldVICosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 180, -1));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(189, 75, 0));
+        jLabel14.setText("Costo del viaje");
+        panelImage3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 410, -1));
+        panelImage3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 760, 10));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(189, 75, 0));
+        jLabel15.setText("Detalles extra del viaje");
+        panelImage3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 690, -1));
+
+        txtFieldVIDetalles.setBackground(new java.awt.Color(255, 240, 222));
+        txtFieldVIDetalles.setColumns(20);
+        txtFieldVIDetalles.setRows(5);
+        jScrollPane4.setViewportView(txtFieldVIDetalles);
+
+        panelImage3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 750, -1));
+
+        btnAtras1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back.png"))); // NOI18N
+
+        javax.swing.GroupLayout btnAtras1Layout = new javax.swing.GroupLayout(btnAtras1);
+        btnAtras1.setLayout(btnAtras1Layout);
+        btnAtras1Layout.setHorizontalGroup(
+            btnAtras1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        btnAtras1Layout.setVerticalGroup(
+            btnAtras1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        panelImage3.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 70, 70));
+
+        panelImage11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/barraNaranja.png"))); // NOI18N
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Publicar");
+        jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout panelImage11Layout = new javax.swing.GroupLayout(panelImage11);
+        panelImage11.setLayout(panelImage11Layout);
+        panelImage11Layout.setHorizontalGroup(
+            panelImage11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+        );
+        panelImage11Layout.setVerticalGroup(
+            panelImage11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        panelImage3.add(panelImage11, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 550, 130, 50));
+
         javax.swing.GroupLayout CrearViajeLayout = new javax.swing.GroupLayout(CrearViaje);
         CrearViaje.setLayout(CrearViajeLayout);
         CrearViajeLayout.setHorizontalGroup(
@@ -479,6 +606,29 @@ public class MenuFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        //CREAR PUBLICACION
+        LimpiarCrearOpinion();
+        jTabbedPane1.setSelectedIndex(1);
+        
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        //OFRECER VIAJE
+        
+    }//GEN-LAST:event_jLabel2MouseClicked
+    
+    public void LimpiarCrearOpinion(){
+        txtFieldOPLugar.setText("");
+        txtFielOPEquipaje.setText("");
+        txtFielOPLugar1.setText("");
+        txtFielOPLugar2.setText("");
+        txtFielOPLugar3.setText("");
+        txtFielOPObstaculo.setText("");
+        txtFielOPPresupuesto.setText("");
+        txtFielOPFechas.setText("");
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -520,6 +670,7 @@ public class MenuFrame extends javax.swing.JFrame {
     private javax.swing.JPanel MenuInicio;
     private org.edisoncor.gui.panel.PanelImage MenuPrincipal;
     private org.edisoncor.gui.panel.PanelImage btnAtras;
+    private org.edisoncor.gui.panel.PanelImage btnAtras1;
     private org.edisoncor.gui.panel.PanelImage btnCrearOpinion;
     private org.edisoncor.gui.panel.PanelImage btnCrearViaje;
     private org.edisoncor.gui.panel.PanelImage btnCrearViaje1;
@@ -530,6 +681,11 @@ public class MenuFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -543,20 +699,16 @@ public class MenuFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel labelApellido;
     private javax.swing.JLabel labelNombre;
     private org.edisoncor.gui.panel.PanelImage logo;
     private org.edisoncor.gui.panel.PanelImage panelImage1;
+    private org.edisoncor.gui.panel.PanelImage panelImage10;
+    private org.edisoncor.gui.panel.PanelImage panelImage11;
     private org.edisoncor.gui.panel.PanelImage panelImage2;
     private org.edisoncor.gui.panel.PanelImage panelImage3;
     private org.edisoncor.gui.panel.PanelImage panelImage4;
@@ -564,6 +716,18 @@ public class MenuFrame extends javax.swing.JFrame {
     private org.edisoncor.gui.panel.PanelImage panelImage6;
     private org.edisoncor.gui.panel.PanelImage panelImage7;
     private org.edisoncor.gui.panel.PanelImage panelImage8;
+    private org.edisoncor.gui.panel.PanelImage panelImage9;
     private javax.swing.JScrollPane scrollPrincipal;
+    private javax.swing.JTextArea txtFielOPEquipaje;
+    private javax.swing.JTextArea txtFielOPFechas;
+    private javax.swing.JTextField txtFielOPLugar1;
+    private javax.swing.JTextField txtFielOPLugar2;
+    private javax.swing.JTextField txtFielOPLugar3;
+    private javax.swing.JTextArea txtFielOPObstaculo;
+    private javax.swing.JTextField txtFielOPPresupuesto;
+    private javax.swing.JTextField txtFieldOPLugar;
+    private javax.swing.JTextField txtFieldVICosto;
+    private javax.swing.JTextArea txtFieldVIDetalles;
+    private javax.swing.JTextField txtFieldVILugar;
     // End of variables declaration//GEN-END:variables
 }

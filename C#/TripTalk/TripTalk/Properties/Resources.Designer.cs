@@ -63,6 +63,16 @@ namespace TripTalk.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back {
+            get {
+                object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap barraDegradadoNaranja {
             get {
                 object obj = ResourceManager.GetObject("barraDegradadoNaranja", resourceCulture);
@@ -83,9 +93,39 @@ namespace TripTalk.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap barraDegradadoNaranja341x38 {
+            get {
+                object obj = ResourceManager.GetObject("barraDegradadoNaranja341x38", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap barraNaranja117x35 {
             get {
                 object obj = ResourceManager.GetObject("barraNaranja117x35", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barraNaranja150x45 {
+            get {
+                object obj = ResourceManager.GetObject("barraNaranja150x45", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barraNaranja340x112 {
+            get {
+                object obj = ResourceManager.GetObject("barraNaranja340x112", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

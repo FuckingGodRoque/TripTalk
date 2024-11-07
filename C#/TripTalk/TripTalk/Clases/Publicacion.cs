@@ -9,19 +9,21 @@ namespace TripTalk.Clases
 {
     public class Publicacion
     {
+
         private int idPublicacion;
         private string lugar;
         private string presupuesto;
         private string obstaculos;
         private string equipaje;
         private string fechasRecomendadas;
-        private string fechaPublicacion;
-        private string agencia;
+        private string tipo;
         private int usuario_IdUsuario;
 
         public Publicacion() { }
 
-        private Publicacion (int idPublicacion, string lugar, string presupuesto, string obstaculos, string equipaje, string fechasRecomendadas, string fechaPublicacion, string agencia, int usuario_IdUsuario)
+
+        public Publicacion(int idPublicacion, string lugar, string presupuesto, string obstaculos,
+                           string equipaje, string fechasRecomendadas, string tipo, int usuario_IdUsuario)
         {
             this.idPublicacion = idPublicacion;
             this.lugar = lugar;
@@ -29,21 +31,58 @@ namespace TripTalk.Clases
             this.obstaculos = obstaculos;
             this.equipaje = equipaje;
             this.fechasRecomendadas = fechasRecomendadas;
-            this.fechaPublicacion = fechaPublicacion;
-            this.agencia = agencia;
+            this.tipo = tipo;
+            this.usuario_IdUsuario = usuario_IdUsuario;
         }
-        
-        public int IdPublicacion { get => idPublicacion; set => idPublicacion = value; }
-        public string Lugar { get => lugar; set => lugar = value; }
-        public string Presupuesto { get => presupuesto; set => presupuesto = value; }
 
-        public string Obstaculos { get => obstaculos; set => obstaculos = value; }
 
-        public string Equipaje { get => equipaje; set => equipaje = value; }
-        public string FechasRecomendadas { get => fechasRecomendadas; set=> fechasRecomendadas= value; }
+        public int IdPublicacion
+        {
+            get => idPublicacion;
+            set => idPublicacion = value;
+        }
 
-        public string FechaPublicacion {  get => fechaPublicacion; set => fechaPublicacion= value; }
-        public string Agencia { get => agencia; set => agencia = value; }
+        public string Lugar
+        {
+            get => lugar;
+            set => lugar = value;
+        }
 
+        public string Presupuesto
+        {
+            get => presupuesto;
+            set => presupuesto = value;
+        }
+
+        public string Obstaculos
+        {
+            get => obstaculos;
+            set => obstaculos = value;
+        }
+
+        public string Equipaje
+        {
+            get => equipaje;
+            set => equipaje = value;
+        }
+
+        public string FechasRecomendadas
+        {
+            get => fechasRecomendadas;
+            set => fechasRecomendadas = value;
+        }
+
+        public string Tipo
+        {
+            get => tipo;
+            set => tipo = value;
+        }
+
+        public int Usuario_IdUsuario
+        {
+            get => usuario_IdUsuario;
+            set => usuario_IdUsuario = value;
+        }
     }
+
 }
