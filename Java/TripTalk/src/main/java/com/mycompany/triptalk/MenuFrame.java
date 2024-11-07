@@ -193,7 +193,7 @@ public class MenuFrame extends javax.swing.JFrame {
 
         jPanel1.add(btnCrearViaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 350, -1, -1));
 
-        fondo.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 660));
+        fondo.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 660));
 
         jTabbedPane1.setBackground(new java.awt.Color(246, 252, 251));
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
@@ -211,6 +211,11 @@ public class MenuFrame extends javax.swing.JFrame {
         btnOpiniones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnOpiniones.setText("Opiniones");
         btnOpiniones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpiniones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOpinionesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelImage1Layout = new javax.swing.GroupLayout(panelImage1);
         panelImage1.setLayout(panelImage1Layout);
@@ -232,6 +237,11 @@ public class MenuFrame extends javax.swing.JFrame {
         btnViajes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnViajes.setText("Viajes");
         btnViajes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnViajes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnViajesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelImage6Layout = new javax.swing.GroupLayout(panelImage6);
         panelImage6.setLayout(panelImage6Layout);
@@ -253,6 +263,11 @@ public class MenuFrame extends javax.swing.JFrame {
         btnMisPublicaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnMisPublicaciones.setText("Mis publicaciones");
         btnMisPublicaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMisPublicaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMisPublicacionesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelImage7Layout = new javax.swing.GroupLayout(panelImage7);
         panelImage7.setLayout(panelImage7Layout);
@@ -423,6 +438,11 @@ public class MenuFrame extends javax.swing.JFrame {
         panelImage2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 350, 70));
 
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back.png"))); // NOI18N
+        btnAtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAtrasMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnAtrasLayout = new javax.swing.GroupLayout(btnAtras);
         btnAtras.setLayout(btnAtrasLayout);
@@ -546,6 +566,11 @@ public class MenuFrame extends javax.swing.JFrame {
         panelImage3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 750, -1));
 
         btnAtras1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back.png"))); // NOI18N
+        btnAtras1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAtras1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnAtras1Layout = new javax.swing.GroupLayout(btnAtras1);
         btnAtras1.setLayout(btnAtras1Layout);
@@ -615,8 +640,39 @@ public class MenuFrame extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         //OFRECER VIAJE
-        
+        LimpiarCrearViaje();
+        jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void btnAtras1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtras1MouseClicked
+        LimpiarCrearOpinion();
+        LimpiarCrearViaje();
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_btnAtras1MouseClicked
+
+    private void btnAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtrasMouseClicked
+        LimpiarCrearOpinion();
+        LimpiarCrearViaje();
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_btnAtrasMouseClicked
+
+    private void btnOpinionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOpinionesMouseClicked
+        // MOSTRAR TODAS LAS OPINIONES
+    }//GEN-LAST:event_btnOpinionesMouseClicked
+
+    private void btnViajesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnViajesMouseClicked
+        // MOSTRAR VIAJES OFRECIDOS POR ADMIN
+    }//GEN-LAST:event_btnViajesMouseClicked
+
+    private void btnMisPublicacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMisPublicacionesMouseClicked
+        // MOSTRAR MIS PUBLICACIONES
+    }//GEN-LAST:event_btnMisPublicacionesMouseClicked
+    
+    public void LimpiarCrearViaje(){
+        txtFieldVICosto.setText("");
+        txtFieldVIDetalles.setText("");
+        txtFieldVILugar.setText("");
+    }
     
     public void LimpiarCrearOpinion(){
         txtFieldOPLugar.setText("");

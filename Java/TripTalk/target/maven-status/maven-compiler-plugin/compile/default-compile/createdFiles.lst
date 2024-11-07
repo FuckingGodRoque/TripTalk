@@ -1,10 +1,15 @@
+com\mycompany\triptalk\MenuFrame$5.class
 com\mycompany\triptalk\RegisterFrame$13.class
 com\mycompany\triptalk\LoginFrame$7.class
 com\mycompany\triptalk\clases\Usuario.class
+com\mycompany\triptalk\MenuFrame$2.class
 com\mycompany\triptalk\RegisterFrame$9.class
+com\mycompany\triptalk\clases\Publicacion.class
 com\mycompany\triptalk\RegisterFrame$1.class
+com\mycompany\triptalk\MenuFrame$4.class
 com\mycompany\triptalk\RegisterFrame.class
 com\mycompany\triptalk\LoginFrame$4.class
+com\mycompany\triptalk\PanelPublicacion.class
 com\mycompany\triptalk\LoginFrame$1.class
 com\mycompany\triptalk\RegisterFrame$8.class
 com\mycompany\triptalk\MenuFrame$1.class
@@ -25,3 +30,4 @@ com\mycompany\triptalk\RegisterFrame$10.class
 com\mycompany\triptalk\LoginFrame$6.class
 com\mycompany\triptalk\RegisterFrame$4.class
 com\mycompany\triptalk\LoginFrame$3.class
+com\mycompany\triptalk\MenuFrame$3.class
