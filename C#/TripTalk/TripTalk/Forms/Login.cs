@@ -89,16 +89,18 @@ namespace TripTalk.Forms
         {
             try
             {
-                StreamReader sr = new StreamReader(ruta +"usuarios.json");
+                StreamReader sr = new StreamReader(ruta + "usuarios.json");
                 string json = sr.ReadToEnd();
                 sr.Close();
                 listUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(json);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 new Log().WriteException(ex);
             }
         }
+
+
 
         private void textUsuario_MouseDown(object sender, MouseEventArgs e)
         {

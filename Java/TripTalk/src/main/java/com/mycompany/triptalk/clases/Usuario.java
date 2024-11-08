@@ -8,6 +8,7 @@ public class Usuario {
     private String password;
     private String correo;
     private String rol;
+    private boolean bloqueado;
 
     public Usuario() {
     }
@@ -19,6 +20,7 @@ public class Usuario {
         this.password = password;
         this.correo = correo;
         this.rol = rol;
+        bloqueado=false;
     }
 
     public String getNombre() {
@@ -67,6 +69,14 @@ public class Usuario {
 
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public boolean isBloqueado() {
+        return bloqueado;
+    }
+
+    public void setBloqueado(boolean bloqueado) {
+        this.bloqueado = bloqueado;
     }
     
     

@@ -18,7 +18,6 @@ import org.json.simple.parser.JSONParser;
 
 public class ComentariosFrame extends javax.swing.JFrame {
     
-    private Pregunta pregunta;
     private Usuario usuarioActual;
     private Publicacion publicacion;
     private GridLayout grid = new GridLayout(1, 1);
@@ -30,12 +29,12 @@ public class ComentariosFrame extends javax.swing.JFrame {
         initComponents();
     }
     
-    public ComentariosFrame(Publicacion publicacion, Pregunta pregunta, Usuario usuarioActual) {
+    public ComentariosFrame(Publicacion publicacion, Usuario usuarioActual) {
         initComponents();
-        this.pregunta=pregunta;
         this.usuarioActual=usuarioActual;
         this.publicacion = publicacion;
         panelComentarios.setLayout(grid);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -49,7 +48,7 @@ public class ComentariosFrame extends javax.swing.JFrame {
 
         panelImage1 = new org.edisoncor.gui.panel.PanelImage();
         jScrollPane1 = new javax.swing.JScrollPane();
-        panelComentarios = new javax.swing.JPanel();
+        panelComentarios = new org.edisoncor.gui.panel.PanelImage();
         txtFieldComentario = new javax.swing.JTextField();
         panelImage3 = new org.edisoncor.gui.panel.PanelImage();
         jLabel1 = new javax.swing.JLabel();
@@ -72,13 +71,13 @@ public class ComentariosFrame extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setBorder(null);
 
-        panelComentarios.setBackground(new java.awt.Color(255, 255, 255));
+        panelComentarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/panelBlancoRedondeado.png"))); // NOI18N
 
         javax.swing.GroupLayout panelComentariosLayout = new javax.swing.GroupLayout(panelComentarios);
         panelComentarios.setLayout(panelComentariosLayout);
         panelComentariosLayout.setHorizontalGroup(
             panelComentariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGap(0, 683, Short.MAX_VALUE)
         );
         panelComentariosLayout.setVerticalGroup(
             panelComentariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,7 +110,7 @@ public class ComentariosFrame extends javax.swing.JFrame {
         panelImage3.setLayout(panelImage3Layout);
         panelImage3Layout.setHorizontalGroup(
             panelImage3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
         );
         panelImage3Layout.setVerticalGroup(
             panelImage3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,16 +121,15 @@ public class ComentariosFrame extends javax.swing.JFrame {
         panelImage1.setLayout(panelImage1Layout);
         panelImage1Layout.setHorizontalGroup(
             panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelImage1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelImage1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
                     .addGroup(panelImage1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(txtFieldComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtFieldComentario, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panelImage3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                        .addComponent(panelImage3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(21, 21, 21))
         );
         panelImage1Layout.setVerticalGroup(
             panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,7 +143,7 @@ public class ComentariosFrame extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        getContentPane().add(panelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 670));
+        getContentPane().add(panelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 670));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,7 +158,12 @@ public class ComentariosFrame extends javax.swing.JFrame {
         if(preguntaString.isEmpty()){
             JOptionPane.showMessageDialog(null, "¡Antes debes escribir una pregunta!");
         }else{
-            int id=listPreguntas.size();
+            int id;
+            if (listPreguntas.isEmpty()){
+                id=0;
+            }else{
+                id = listPreguntas.getLast().getIdPregunta() + 1;
+            }
             Pregunta pregunta = new Pregunta (id,publicacion.getIdPublicacion(),preguntaString,usuarioActual.getIdUsuario());
             listPreguntas.add(pregunta);
             txtFieldComentario.setText("");
@@ -182,8 +185,10 @@ public class ComentariosFrame extends javax.swing.JFrame {
         panelComentarios.removeAll();
         grid.setRows(listPreguntas.size());
         for (Pregunta pregunta : listPreguntas) {
-            PanelPregunta panelPregunta = new PanelPregunta(pregunta,usuarioActual);
-            panelComentarios.add(panelPregunta);
+            if(publicacion.getIdPublicacion()==pregunta.getIdPublicacion()){
+                PanelPregunta panelPregunta = new PanelPregunta(pregunta,usuarioActual);
+                panelComentarios.add(panelPregunta);
+            }
         }
         panelComentarios.updateUI();
     }
@@ -229,6 +234,11 @@ public class ComentariosFrame extends javax.swing.JFrame {
         }
     }
     
+    public void EliminarPregunta(Pregunta pregunta){
+        listPreguntas.remove(pregunta);
+        GuardarPreguntas();
+    }
+    
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -265,7 +275,7 @@ public class ComentariosFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPanel panelComentarios;
+    private org.edisoncor.gui.panel.PanelImage panelComentarios;
     private org.edisoncor.gui.panel.PanelImage panelImage1;
     private org.edisoncor.gui.panel.PanelImage panelImage3;
     private javax.swing.JTextField txtFieldComentario;

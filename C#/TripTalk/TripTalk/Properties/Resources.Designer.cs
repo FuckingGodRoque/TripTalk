@@ -193,6 +193,16 @@ namespace TripTalk.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap deleteIcon {
+            get {
+                object obj = ResourceManager.GetObject("deleteIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_me_15 {
             get {
                 object obj = ResourceManager.GetObject("icons8-me-15", resourceCulture);
@@ -246,6 +256,16 @@ namespace TripTalk.Properties {
         internal static System.Drawing.Bitmap logoTripTalk260x140 {
             get {
                 object obj = ResourceManager.GetObject("logoTripTalk260x140", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MARCONaranjaRedondeado {
+            get {
+                object obj = ResourceManager.GetObject("MARCONaranjaRedondeado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

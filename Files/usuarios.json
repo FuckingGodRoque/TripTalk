@@ -1,26 +1,29 @@
 [
-  {
-    "idUsuario": 0,
-    "nombre": "Pedro",
-    "apellido": "Picapiedras",
-    "password": "12345",
-    "correo": "pedrop@gmail.com",
-    "rol": "npc"
-  },
-  {
-    "idUsuario": 1,
-    "nombre": "Vitor",
-    "apellido": "Guapo",
-    "password": "12345",
-    "correo": "vitorio@gmail.com",
-    "rol": "npc"
-  },
-  {
-    "idUsuario": 2,
-    "nombre": "Monica",
-    "apellido": "Idk",
-    "password": "12345",
-    "correo": "monica@gmail.com",
-    "rol": "adm"
-  }
+    {
+        "idUsuario": 0,
+        "nombre": "Pedro",
+        "apellido": "Picapiedras",
+        "password": "12345",
+        "correo": "pedrop@gmail.com",
+        "rol": "npc",
+        "bloqueado": false
+    },
+    {
+        "idUsuario": 1,
+        "nombre": "Vitor",
+        "apellido": "Guapo",
+        "password": "12345",
+        "correo": "vitorio@gmail.com",
+        "rol": "npc",
+        "bloqueado": false
+    },
+    {
+        "idUsuario": 2,
+        "nombre": "Monica",
+        "apellido": "Idk",
+        "password": "12345",
+        "correo": "monica@gmail.com",
+        "rol": "adm",
+        "bloqueado": false
+    }
 ]

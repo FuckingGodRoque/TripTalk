@@ -14,3 +14,5 @@ C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\
 C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.csproj.Up2Date
 C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.exe
 C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.pdb
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.Forms.Comentarios.resources
+C:\Users\DANIEL ROQUE\OneDrive - Instituto Tecnológico de Morelia\5to Semestre\TAP\TripTalk\C#\TripTalk\TripTalk\obj\Debug\TripTalk.Forms.PanelPregunta.resources

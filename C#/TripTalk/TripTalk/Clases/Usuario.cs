@@ -15,6 +15,7 @@ namespace TripTalk.Clases
         String password;
         String correo;
         String rol;
+        bool bloqueado;
         public Usuario(){
 
         }
@@ -27,6 +28,7 @@ namespace TripTalk.Clases
             this.password = password;
             this.correo = correo;
             rol = "npc";
+            bloqueado= false;
         }
         [JsonProperty("idUsuario")]
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
@@ -40,6 +42,13 @@ namespace TripTalk.Clases
         public string Correo { get => correo; set => correo = value; }
         [JsonProperty("rol")]
         public string Rol { get => rol; set => rol = value; }
+
+        [JsonProperty("bloqueado")]
+        public bool Bloqueado
+        {
+            get => bloqueado;
+            set => bloqueado = value;
+        }
 
         public override string ToString()
         {

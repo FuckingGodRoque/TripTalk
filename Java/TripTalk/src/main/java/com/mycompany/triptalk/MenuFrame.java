@@ -1,35 +1,73 @@
-
 package com.mycompany.triptalk;
 
 import com.google.gson.Gson;
+import com.mycompany.triptalk.clases.Pregunta;
 import com.mycompany.triptalk.clases.Publicacion;
 import com.mycompany.triptalk.clases.Usuario;
+import java.awt.Desktop;
 import java.awt.GridLayout;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+// excel
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFDrawing;
+import org.apache.poi.xssf.usermodel.XSSFChart;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xddf.usermodel.chart.XDDFCategoryAxis;
+import org.apache.poi.xddf.usermodel.chart.XDDFDataSourcesFactory;
+import org.apache.poi.xddf.usermodel.chart.XDDFNumericalDataSource;
+import org.apache.poi.xddf.usermodel.chart.XDDFValueAxis;
+import org.apache.poi.xddf.usermodel.chart.XDDFBarChartData;
+import org.apache.poi.xddf.usermodel.chart.AxisPosition;
+import org.apache.poi.xddf.usermodel.chart.BarDirection;
+import org.apache.poi.xddf.usermodel.chart.XDDFCategoryDataSource;
+import org.apache.poi.xddf.usermodel.chart.ChartTypes;
+import java.io.File;
+import java.io.FileOutputStream;
+//pdf
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
+import java.io.FileNotFoundException;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
+//
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 
 public class MenuFrame extends javax.swing.JFrame {
+
     private ArrayList<Usuario> listUsuarios = new ArrayList<>();
     private ArrayList<Publicacion> listPublicaciones = new ArrayList<>();
+    private ArrayList<Pregunta> listPreguntas = new ArrayList<>();
     private Usuario usuarioActual;
     private int feedIndex = 0;
     private GridLayout grid = new GridLayout(1, 1);
-    
+
     private String ruta = "C:\\Users\\arman\\Instituto Tecnológico de Morelia\\DANIEL ADRIAN ROQUE CORTES - Red social de sugerencia de viajes\\Files\\";
-    
+
     public MenuFrame() {
         initComponents();
         setLocationRelativeTo(null);
     }
-    
-    public MenuFrame(Usuario usuarioActual){
+
+    public MenuFrame(Usuario usuarioActual) {
         initComponents();
         setLocationRelativeTo(null);
         this.usuarioActual = usuarioActual;
@@ -56,6 +94,12 @@ public class MenuFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnCrearViaje = new org.edisoncor.gui.panel.PanelImage();
         jLabel2 = new javax.swing.JLabel();
+        btnUsuariosPane = new org.edisoncor.gui.panel.PanelImage();
+        btnUsuarios = new javax.swing.JLabel();
+        btnLugares = new org.edisoncor.gui.panel.PanelImage();
+        labelBtnLugaresPopulares = new javax.swing.JLabel();
+        btnTopus = new org.edisoncor.gui.panel.PanelImage();
+        labelBtnTopUsuarios = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         MenuInicio = new javax.swing.JPanel();
         MenuPrincipal = new org.edisoncor.gui.panel.PanelImage();
@@ -235,6 +279,88 @@ public class MenuFrame extends javax.swing.JFrame {
         );
 
         jPanel1.add(btnCrearViaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 350, -1, -1));
+
+        btnUsuariosPane.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/barraNaranja.png"))); // NOI18N
+
+        btnUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
+        btnUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnUsuarios.setText("Ver usuarios");
+        btnUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnUsuariosMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnUsuariosPaneLayout = new javax.swing.GroupLayout(btnUsuariosPane);
+        btnUsuariosPane.setLayout(btnUsuariosPaneLayout);
+        btnUsuariosPaneLayout.setHorizontalGroup(
+            btnUsuariosPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnUsuarios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+        );
+        btnUsuariosPaneLayout.setVerticalGroup(
+            btnUsuariosPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(btnUsuariosPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 410, -1, -1));
+
+        btnLugares.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botonBlancoSombra.png"))); // NOI18N
+
+        labelBtnLugaresPopulares.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        labelBtnLugaresPopulares.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelBtnLugaresPopulares.setText("Lugares más populares");
+        labelBtnLugaresPopulares.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelBtnLugaresPopulares.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelBtnLugaresPopularesMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnLugaresLayout = new javax.swing.GroupLayout(btnLugares);
+        btnLugares.setLayout(btnLugaresLayout);
+        btnLugaresLayout.setHorizontalGroup(
+            btnLugaresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnLugaresLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelBtnLugaresPopulares, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        btnLugaresLayout.setVerticalGroup(
+            btnLugaresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(labelBtnLugaresPopulares, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(btnLugares, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 140, 30));
+
+        btnTopus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botonBlancoSombra.png"))); // NOI18N
+
+        labelBtnTopUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        labelBtnTopUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelBtnTopUsuarios.setText("Top usuarios");
+        labelBtnTopUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelBtnTopUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelBtnTopUsuariosMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnTopusLayout = new javax.swing.GroupLayout(btnTopus);
+        btnTopus.setLayout(btnTopusLayout);
+        btnTopusLayout.setHorizontalGroup(
+            btnTopusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnTopusLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelBtnTopUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        btnTopusLayout.setVerticalGroup(
+            btnTopusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(labelBtnTopUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(btnTopus, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 140, 30));
 
         fondo.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 660));
 
@@ -687,7 +813,7 @@ public class MenuFrame extends javax.swing.JFrame {
         //CREAR PUBLICACION
         LimpiarCrearOpinion();
         jTabbedPane1.setSelectedIndex(1);
-        
+
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -710,7 +836,7 @@ public class MenuFrame extends javax.swing.JFrame {
 
     private void btnOpinionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOpinionesMouseClicked
         // MOSTRAR TODAS LAS OPINIONES
-        feedIndex=0;
+        feedIndex = 0;
         panelImageOpinionBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonGrisSombra.png")));
         panelImageViajesBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonBlancoSombra.png")));
         panelImageMisPublicacionesBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonBlancoSombra.png")));
@@ -720,7 +846,7 @@ public class MenuFrame extends javax.swing.JFrame {
 
     private void btnViajesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnViajesMouseClicked
         // MOSTRAR VIAJES OFRECIDOS POR ADMIN
-        feedIndex=1;
+        feedIndex = 1;
         panelImageOpinionBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonBlancoSombra.png")));
         panelImageViajesBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonGrisSombra.png")));
         panelImageMisPublicacionesBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonBlancoSombra.png")));
@@ -730,7 +856,7 @@ public class MenuFrame extends javax.swing.JFrame {
 
     private void btnMisPublicacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMisPublicacionesMouseClicked
         // MOSTRAR MIS PUBLICACIONES
-        feedIndex=2;
+        feedIndex = 2;
         panelImageOpinionBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonBlancoSombra.png")));
         panelImageViajesBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonBlancoSombra.png")));
         panelImageMisPublicacionesBtn.setIcon(new ImageIcon(getClass().getResource("/images/botonGrisSombra.png")));
@@ -755,43 +881,50 @@ public class MenuFrame extends javax.swing.JFrame {
         CargarPublicaciones();
         labelNombre.setText(usuarioActual.getNombre());
         labelApellido.setText(usuarioActual.getApellido());
-        
-        //SI NO ES ADMIN, ocultar ofrecer viaje
-        if(usuarioActual.getRol().equalsIgnoreCase("npc")){
+
+        //SI NO ES ADMIN, ocultar ofrecer viaje y ver usuarios
+        if (usuarioActual.getRol().equalsIgnoreCase("npc")) {
             btnCrearViaje.setVisible(false); //boton
+            btnUsuariosPane.setVisible(false);
+            btnUsuarios.setVisible(false);
             jTabbedPane1.remove(2); //pestaña para crear viajes
+            btnTopus.setVisible(false);
+            btnLugares.setVisible(false);
         }
         ActualizarFeed();
-        
+
     }//GEN-LAST:event_formWindowOpened
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // Publicar Opinion
-        if (txtFieldOPLugar.getText().trim().isEmpty() ||
-           txtFielOPEquipaje.getText().trim().isEmpty() ||
-           txtFielOPLugar1.getText().trim().isEmpty() ||
-           txtFielOPLugar2.getText().trim().isEmpty() ||
-           txtFielOPLugar3.getText().trim().isEmpty() ||
-           txtFielOPObstaculo.getText().trim().isEmpty() ||
-           txtFielOPPresupuesto.getText().trim().isEmpty() ||
-           txtFielOPFechas.getText().trim().isEmpty()
-        ){
+        if (txtFieldOPLugar.getText().trim().isEmpty()
+                || txtFielOPEquipaje.getText().trim().isEmpty()
+                || txtFielOPLugar1.getText().trim().isEmpty()
+                || txtFielOPLugar2.getText().trim().isEmpty()
+                || txtFielOPLugar3.getText().trim().isEmpty()
+                || txtFielOPObstaculo.getText().trim().isEmpty()
+                || txtFielOPPresupuesto.getText().trim().isEmpty()
+                || txtFielOPFechas.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "¡Debes rellenar todos los campos!");
-        }
-        else{
-            int id=listPublicaciones.size();
+        } else {
+            int id;
+            if (listPublicaciones.isEmpty()) {
+                id = listPublicaciones.size();
+            } else {
+                id = listPublicaciones.getLast().getIdPublicacion() + 1;
+            }
             Publicacion publicacion = new Publicacion(
-                id,
-                usuarioActual.getIdUsuario(),
-                txtFieldOPLugar.getText(),
-                txtFielOPPresupuesto.getText(),
-                txtFielOPObstaculo.getText(),
-                txtFielOPLugar1.getText(),  // lugar recomendado 1
-                txtFielOPLugar2.getText(),  // lugar recomendado 2
-                txtFielOPLugar3.getText(),  // lugar recomendado 3
-                txtFielOPEquipaje.getText(),
-                txtFielOPFechas.getText(),
-                "opinion"  // tipo
+                    id,
+                    usuarioActual.getIdUsuario(),
+                    txtFieldOPLugar.getText(),
+                    txtFielOPPresupuesto.getText(),
+                    txtFielOPObstaculo.getText(),
+                    txtFielOPLugar1.getText(), // lugar recomendado 1
+                    txtFielOPLugar2.getText(), // lugar recomendado 2
+                    txtFielOPLugar3.getText(), // lugar recomendado 3
+                    txtFielOPEquipaje.getText(),
+                    txtFielOPFechas.getText(),
+                    "opinion" // tipo
             );
             listPublicaciones.add(publicacion);
             GuardarPublicaciones();
@@ -802,22 +935,24 @@ public class MenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
-        if(txtFieldVICosto.getText().trim().isEmpty() ||
-           txtFieldVIDetalles.getText().trim().isEmpty() ||
-           txtFieldVILugar.getText().trim().isEmpty()
-        )
-        {
+        if (txtFieldVICosto.getText().trim().isEmpty()
+                || txtFieldVIDetalles.getText().trim().isEmpty()
+                || txtFieldVILugar.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "¡Debes rellenar todos los campos!");
-        }
-        else{
-            int id=listPublicaciones.size();
+        } else {
+            int id;
+            if (listPublicaciones.isEmpty()) {
+                id = listPublicaciones.size();
+            } else {
+                id = listPublicaciones.getLast().getIdPublicacion() + 1;
+            }
             Publicacion publicacion = new Publicacion(
-                id,
-                usuarioActual.getIdUsuario(),
-                txtFieldVILugar.getText(), 
-                txtFieldVICosto.getText(), 
-                txtFieldVIDetalles.getText(), 
-                "viaje"
+                    id,
+                    usuarioActual.getIdUsuario(),
+                    txtFieldVILugar.getText(),
+                    txtFieldVICosto.getText(),
+                    txtFieldVIDetalles.getText(),
+                    "viaje"
             );
             listPublicaciones.add(publicacion);
             GuardarPublicaciones();
@@ -826,41 +961,75 @@ public class MenuFrame extends javax.swing.JFrame {
             ActualizarFeed();
         }
     }//GEN-LAST:event_jLabel16MouseClicked
-    
-    public void ActualizarFeed(){
+
+    private void btnUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuariosMouseClicked
+        new UsuariosFrame().setVisible(true);
+    }//GEN-LAST:event_btnUsuariosMouseClicked
+
+    private void labelBtnLugaresPopularesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBtnLugaresPopularesMouseClicked
+        try {
+            generarReporteLugares(listPublicaciones, listPreguntas);
+        } catch (IOException ex) {
+            System.out.println("ERROR AL GENERAR EXCEL");
+        }
+    }//GEN-LAST:event_labelBtnLugaresPopularesMouseClicked
+
+    private void labelBtnTopUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBtnTopUsuariosMouseClicked
+        try {
+            crearPdfUsuariosMasOpiniones();
+        } catch (IOException ex) {
+            System.out.println("Error con el pdf");
+        }
+    }//GEN-LAST:event_labelBtnTopUsuariosMouseClicked
+
+    public void ActualizarFeed() {
         CargarPublicaciones();
         panelFeed.removeAll();
         grid.setRows(listPublicaciones.size());
+        int cantidadPublicaciones = 0;
         for (Publicacion publicacion : listPublicaciones) {
-            boolean valida=false;
+            boolean valida = false;
             String tipo;
-            if (feedIndex==0){
-                if (publicacion.getTipo().equalsIgnoreCase("opinion")) valida =true;
-            }
-            else if(feedIndex==1){
-                if (publicacion.getTipo().equalsIgnoreCase("viaje")) valida = true;
-            }
-            else{
-                if (publicacion.getIdUsuario()==usuarioActual.getIdUsuario()) valida = true;
+            if (feedIndex == 0) {
+                if (publicacion.getTipo().equalsIgnoreCase("opinion")) {
+                    valida = true;
+                }
+            } else if (feedIndex == 1) {
+                if (publicacion.getTipo().equalsIgnoreCase("viaje")) {
+                    valida = true;
+                }
+            } else {
+                if (publicacion.getIdUsuario() == usuarioActual.getIdUsuario()) {
+                    valida = true;
+                }
             }
 
-            if(valida){
+            if (valida) {
                 Usuario usuarioPublicacion = obtenerUsuario(publicacion.getIdUsuario());
-                PanelPublicacion panelPublicacion = new PanelPublicacion(publicacion, usuarioPublicacion);
-                panelFeed.add(panelPublicacion);
-                System.out.println("PUBLI: "+publicacion.getIdPublicacion());
+                if (usuarioPublicacion.isBloqueado() == false) {
+                    PanelPublicacion panelPublicacion = new PanelPublicacion(publicacion, usuarioPublicacion, usuarioActual);
+                    panelFeed.add(panelPublicacion);
+                    cantidadPublicaciones++;
+                }
             }
         }
+        grid.setRows(cantidadPublicaciones);
         panelFeed.updateUI();
     }
-    
-    public void LimpiarCrearViaje(){
+
+    public void eliminarPublicacion(Publicacion publicacion) {
+        listPublicaciones.remove(publicacion);
+        GuardarPublicaciones();
+        ActualizarFeed();
+    }
+
+    public void LimpiarCrearViaje() {
         txtFieldVICosto.setText("");
         txtFieldVIDetalles.setText("");
         txtFieldVILugar.setText("");
     }
-    
-    public void LimpiarCrearOpinion(){
+
+    public void LimpiarCrearOpinion() {
         txtFieldOPLugar.setText("");
         txtFielOPEquipaje.setText("");
         txtFielOPLugar1.setText("");
@@ -870,25 +1039,52 @@ public class MenuFrame extends javax.swing.JFrame {
         txtFielOPPresupuesto.setText("");
         txtFielOPFechas.setText("");
     }
-    
-    public void CargarUsuarios(){
+
+    public void CargarPreguntas() {
         try {
             BufferedReader br = new BufferedReader(
-                new FileReader(ruta+"usuarios.json")
+                    new FileReader(ruta + "preguntas.json")
             );
-            String lectura=null;
-            String resultado="";
-            while((lectura=br.readLine()) != null){
-                resultado +=lectura;
+            String lectura = null;
+            String resultado = "";
+            while ((lectura = br.readLine()) != null) {
+                resultado += lectura;
             }
             br.close();
 
             JSONParser parser = new JSONParser();
-            JSONArray jsonArray = (JSONArray)parser.parse(resultado);
+            JSONArray jsonArray = (JSONArray) parser.parse(resultado);
+            listPreguntas.clear();
+            for (int i = 0; i < jsonArray.size(); i++) {
+                Pregunta pregunta = new Gson().fromJson(
+                        jsonArray.get(i).toString(), Pregunta.class
+                );
+
+                listPreguntas.add(pregunta);
+            }
+        } catch (Exception e) {
+            System.out.println("No se cargaron las preguntas del json correctamente");
+        }
+    }
+
+    public void CargarUsuarios() {
+        try {
+            BufferedReader br = new BufferedReader(
+                    new FileReader(ruta + "usuarios.json")
+            );
+            String lectura = null;
+            String resultado = "";
+            while ((lectura = br.readLine()) != null) {
+                resultado += lectura;
+            }
+            br.close();
+
+            JSONParser parser = new JSONParser();
+            JSONArray jsonArray = (JSONArray) parser.parse(resultado);
             listUsuarios.clear();
             for (int i = 0; i < jsonArray.size(); i++) {
                 Usuario user = new Gson().fromJson(
-                    jsonArray.get(i).toString(), Usuario.class
+                        jsonArray.get(i).toString(), Usuario.class
                 );
 
                 listUsuarios.add(user);
@@ -897,25 +1093,25 @@ public class MenuFrame extends javax.swing.JFrame {
             System.out.println("No se cargaron los Usuarios del json correctamente");
         }
     }
-    
-    public void CargarPublicaciones(){
+
+    public void CargarPublicaciones() {
         try {
             BufferedReader br = new BufferedReader(
-                new FileReader(ruta+"publicaciones.json")
+                    new FileReader(ruta + "publicaciones.json")
             );
-            String lectura=null;
-            String resultado="";
-            while((lectura=br.readLine()) != null){
-                resultado +=lectura;
+            String lectura = null;
+            String resultado = "";
+            while ((lectura = br.readLine()) != null) {
+                resultado += lectura;
             }
             br.close();
 
             JSONParser parser = new JSONParser();
-            JSONArray jsonArray = (JSONArray)parser.parse(resultado);
+            JSONArray jsonArray = (JSONArray) parser.parse(resultado);
             listPublicaciones.clear();
             for (int i = 0; i < jsonArray.size(); i++) {
                 Publicacion publicacion = new Gson().fromJson(
-                    jsonArray.get(i).toString(), Publicacion.class
+                        jsonArray.get(i).toString(), Publicacion.class
                 );
 
                 listPublicaciones.add(publicacion);
@@ -924,21 +1120,21 @@ public class MenuFrame extends javax.swing.JFrame {
             System.out.println("No se cargaron las publicaciones del json correctamente");
         }
     }
-    
-    public void GuardarPublicaciones(){
+
+    public void GuardarPublicaciones() {
         try {
             BufferedWriter bw = new BufferedWriter(
-                new FileWriter(ruta+"publicaciones.json",false)
+                    new FileWriter(ruta + "publicaciones.json", false)
             );
             String json = new Gson().toJson(listPublicaciones);
-            
+
             bw.write(json);
             bw.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
     public Usuario obtenerUsuario(int idUsuario) {
         CargarUsuarios();
         for (Usuario usuario : listUsuarios) {
@@ -949,7 +1145,176 @@ public class MenuFrame extends javax.swing.JFrame {
         return null; // Retorna null si no se encuentra el usuario
     }
 
+    ///EXCEL Y ARCHIVOS
+    public void generarReporteLugares(List<Publicacion> listPublicacion, List<Pregunta> listPreguntas) throws IOException {
+        CargarPublicaciones();
+        CargarPreguntas();
+        Map<String, Integer> conteoLugares = new HashMap<>();
+
+        // Crear una lista de lugares válidos (únicamente los que aparecen en publicaciones)
+        Set<String> lugaresValidos = listPublicacion.stream()
+                .map(Publicacion::getLugar)
+                .collect(Collectors.toSet());
+
+        // Contar menciones de lugares en publicaciones
+        for (Publicacion publicacion : listPublicacion) {
+            String lugar = publicacion.getLugar();
+            conteoLugares.put(lugar, conteoLugares.getOrDefault(lugar, 0) + 1);
+        }
+
+        // Contar menciones de lugares en preguntas, solo si la pregunta menciona un lugar válido
+        for (Pregunta pregunta : listPreguntas) {
+            for (String lugar : lugaresValidos) {
+                if (pregunta.getPregunta().contains(lugar)) {
+                    conteoLugares.put(lugar, conteoLugares.getOrDefault(lugar, 0) + 1);
+                }
+            }
+        }
+
+        // Ordenar los lugares por número de menciones y seleccionar los tres más mencionados
+        List<Map.Entry<String, Integer>> topLugares = conteoLugares.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .limit(3)
+                .collect(Collectors.toList());
+
+        // Generar el archivo Excel y la gráfica
+        crearExcelConGrafica(topLugares);
+    }
+
+    public void crearExcelConGrafica(List<Map.Entry<String, Integer>> topLugares) throws IOException {
+        try (Workbook workbook = new XSSFWorkbook()) {
+            // Crear una hoja de Excel
+            XSSFSheet sheet = (XSSFSheet) workbook.createSheet("Lugares más mencionados");
+
+            // Crear encabezados
+            Row headerRow = sheet.createRow(0);
+            headerRow.createCell(0).setCellValue("Lugar");
+            headerRow.createCell(1).setCellValue("Menciones");
+
+            // Llenar las filas con los datos de los lugares más mencionados
+            int rowNum = 1;
+            for (Map.Entry<String, Integer> entry : topLugares) {
+                Row row = sheet.createRow(rowNum++);
+                row.createCell(0).setCellValue(entry.getKey());
+                row.createCell(1).setCellValue(entry.getValue());
+            }
+
+            // Crear el gráfico de barras en la hoja
+            XSSFDrawing drawing = sheet.createDrawingPatriarch();
+            XSSFChart chart = drawing.createChart(drawing.createAnchor(0, 0, 0, 0, 3, 1, 10, 15));
+
+            // Configuración de los ejes
+            XDDFCategoryAxis bottomAxis = chart.createCategoryAxis(AxisPosition.BOTTOM);
+            bottomAxis.setTitle("Lugares");
+            XDDFValueAxis leftAxis = chart.createValueAxis(AxisPosition.LEFT);
+            leftAxis.setTitle("Menciones");
+
+            // Crear las fuentes de datos para el gráfico
+            XDDFCategoryDataSource lugares = XDDFDataSourcesFactory.fromStringCellRange(sheet, new CellRangeAddress(1, rowNum - 1, 0, 0));
+            XDDFNumericalDataSource<Double> menciones = XDDFDataSourcesFactory.fromNumericCellRange(sheet, new CellRangeAddress(1, rowNum - 1, 1, 1));
+
+            // Crear el gráfico de barras (especificamos ChartTypes.BAR)
+            XDDFBarChartData data = (XDDFBarChartData) chart.createData(ChartTypes.BAR, bottomAxis, leftAxis);
+
+            // Crear la serie de datos para el gráfico (lugares y menciones)
+            XDDFBarChartData.Series series = (XDDFBarChartData.Series) data.addSeries(lugares, menciones);
+            series.setTitle("Menciones por Lugar", null);
+
+            // Configurar la dirección de las barras (puedes usar BarDirection.COL para barras verticales)
+            data.setBarDirection(BarDirection.COL); // Las barras son verticales
+
+            // Añadir el gráfico de barras a la hoja
+            chart.plot(data);
+
+            // Guardar el archivo Excel
+            String filePath = ruta + "ReporteLugares.xlsx";
+            try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
+                workbook.write(fileOut);
+            }
+
+            // Abrir automáticamente el archivo Excel
+            File file = new File(filePath);
+            if (file.exists()) {
+                Desktop.getDesktop().open(file);
+            }
+        }
+    }
     
+
+    //PDF
+    public void crearPdfUsuariosMasOpiniones() throws IOException {
+        CargarPublicaciones();
+        CargarUsuarios();
+        // Filtrar las publicaciones de tipo "opinión"
+        List<Publicacion> publicacionesOpinion = listPublicaciones.stream()
+                .filter(pub -> "opinion".equalsIgnoreCase(pub.getTipo()))
+                .collect(Collectors.toList());
+
+        // Contar las publicaciones por usuario
+        Map<Usuario, Long> publicacionesPorUsuario = publicacionesOpinion.stream()
+                .collect(Collectors.groupingBy(
+                        pub -> listUsuarios.stream()
+                                .filter(user -> user.getIdUsuario() == pub.getIdUsuario())
+                                .findFirst()
+                                .orElse(null),
+                        Collectors.counting()
+                ));
+
+        // Obtener los 3 usuarios con más publicaciones de tipo "opinión"
+        List<Map.Entry<Usuario, Long>> topUsuarios = publicacionesPorUsuario.entrySet().stream()
+                .filter(entry -> entry.getKey() != null)
+                .sorted((a, b) -> Long.compare(b.getValue(), a.getValue()))
+                .limit(3)
+                .collect(Collectors.toList());
+
+        // Crear el documento PDF
+        PdfWriter writer = new PdfWriter(ruta + "TopUsuarios.pdf");
+        PdfDocument pdf = new PdfDocument(writer);
+        Document document = new Document(pdf);
+
+        // Título del documento
+        document.add(new Paragraph("Top 3 Usuarios con Más Publicaciones de Opinión").setBold().setFontSize(14));
+
+        // Crear una tabla para los resultados
+        Table table = new Table(new float[]{3, 2, 3});
+        table.addHeaderCell("Usuario");
+        table.addHeaderCell("Total de Publicaciones");
+        table.addHeaderCell("Lugar de Publicaciones");
+
+        // Agregar los datos a la tabla
+        for (Map.Entry<Usuario, Long> entry : topUsuarios) {
+            Usuario usuario = entry.getKey();
+            Long totalPublicaciones = entry.getValue();
+
+            // Agregar fila con el nombre del usuario y el total de publicaciones
+            table.addCell(usuario.getNombre() + " " + usuario.getApellido());
+            table.addCell(totalPublicaciones.toString());
+
+            // Agregar los lugares de cada publicación de tipo "opinión" para el usuario actual
+            List<String> lugares = publicacionesOpinion.stream()
+                    .filter(pub -> pub.getIdUsuario() == usuario.getIdUsuario())
+                    .map(Publicacion::getLugar)
+                    .collect(Collectors.toList());
+
+            table.addCell(String.join(", ", lugares));
+        }
+
+        // Agregar la tabla al documento
+        document.add(table);
+
+        // Cerrar el documento
+        document.close();
+
+        // Abrir automáticamente el archivo PDF
+        File pdfFile = new File(ruta + "TopUsuarios.pdf");
+        if (Desktop.isDesktopSupported()) {
+            Desktop.getDesktop().open(pdfFile);
+        } else {
+            System.out.println("Abrir automáticamente el archivo no es compatible en este sistema.");
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -995,8 +1360,12 @@ public class MenuFrame extends javax.swing.JFrame {
     private org.edisoncor.gui.panel.PanelImage btnCerrarSesion;
     private org.edisoncor.gui.panel.PanelImage btnCrearOpinion;
     private org.edisoncor.gui.panel.PanelImage btnCrearViaje;
+    private org.edisoncor.gui.panel.PanelImage btnLugares;
     private javax.swing.JLabel btnMisPublicaciones;
     private javax.swing.JLabel btnOpiniones;
+    private org.edisoncor.gui.panel.PanelImage btnTopus;
+    private javax.swing.JLabel btnUsuarios;
+    private org.edisoncor.gui.panel.PanelImage btnUsuariosPane;
     private javax.swing.JLabel btnViajes;
     private org.edisoncor.gui.panel.Panel fondo;
     private javax.swing.JLabel jLabel1;
@@ -1024,6 +1393,8 @@ public class MenuFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelApellido;
+    private javax.swing.JLabel labelBtnLugaresPopulares;
+    private javax.swing.JLabel labelBtnTopUsuarios;
     private javax.swing.JLabel labelNombre;
     private org.edisoncor.gui.panel.PanelImage logo;
     private javax.swing.JPanel panelFeed;

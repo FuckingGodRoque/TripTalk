@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.labelLugar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,10 +42,8 @@
             this.textObstaculo = new System.Windows.Forms.TextBox();
             this.textEquipaje = new System.Windows.Forms.TextBox();
             this.textFechas = new System.Windows.Forms.TextBox();
-            this.btnComentarios = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBoxOV = new System.Windows.Forms.PictureBox();
             this.labelOV = new System.Windows.Forms.Label();
             this.labelOVUsuario = new System.Windows.Forms.Label();
             this.labelOVLugar = new System.Windows.Forms.Label();
@@ -55,19 +52,16 @@
             this.panelOV = new System.Windows.Forms.Panel();
             this.textOVDetalles = new System.Windows.Forms.TextBox();
             this.labelOV3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnBorrar = new System.Windows.Forms.PictureBox();
+            this.btnInteres = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.pictureBoxOV = new System.Windows.Forms.PictureBox();
+            this.btnComentarios = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBorrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TripTalk.Properties.Resources.panelBlancoRedondeado;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(560, 326);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // labelUsuario
             // 
@@ -205,17 +199,6 @@
             this.textFechas.Size = new System.Drawing.Size(130, 75);
             this.textFechas.TabIndex = 14;
             // 
-            // btnComentarios
-            // 
-            this.btnComentarios.Image = global::TripTalk.Properties.Resources.botonGrisSombra100x30;
-            this.btnComentarios.Location = new System.Drawing.Point(218, 282);
-            this.btnComentarios.Name = "btnComentarios";
-            this.btnComentarios.Size = new System.Drawing.Size(100, 30);
-            this.btnComentarios.TabIndex = 15;
-            this.btnComentarios.Text = "Ver comentarios";
-            this.btnComentarios.UseVisualStyleBackColor = true;
-            this.btnComentarios.Click += new System.EventHandler(this.btnComentarios_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -231,16 +214,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(526, 2);
             this.panel2.TabIndex = 17;
-            // 
-            // pictureBoxOV
-            // 
-            this.pictureBoxOV.Image = global::TripTalk.Properties.Resources.panelBlancoRedondeado;
-            this.pictureBoxOV.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxOV.Name = "pictureBoxOV";
-            this.pictureBoxOV.Size = new System.Drawing.Size(560, 326);
-            this.pictureBoxOV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxOV.TabIndex = 18;
-            this.pictureBoxOV.TabStop = false;
             // 
             // labelOV
             // 
@@ -263,7 +236,7 @@
             this.labelOVUsuario.Size = new System.Drawing.Size(136, 20);
             this.labelOVUsuario.TabIndex = 20;
             this.labelOVUsuario.Text = "Viaje ofrecido por:";
-            this.labelOVUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelOVUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelOVLugar
             // 
@@ -310,7 +283,7 @@
             this.textOVDetalles.Location = new System.Drawing.Point(30, 214);
             this.textOVDetalles.Multiline = true;
             this.textOVDetalles.Name = "textOVDetalles";
-            this.textOVDetalles.Size = new System.Drawing.Size(496, 85);
+            this.textOVDetalles.Size = new System.Drawing.Size(511, 51);
             this.textOVDetalles.TabIndex = 25;
             // 
             // labelOV3
@@ -323,10 +296,78 @@
             this.labelOV3.TabIndex = 24;
             this.labelOV3.Text = "Detalles del viaje";
             // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Image = global::TripTalk.Properties.Resources.deleteIcon;
+            this.btnBorrar.Location = new System.Drawing.Point(499, 280);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(27, 32);
+            this.btnBorrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnBorrar.TabIndex = 29;
+            this.btnBorrar.TabStop = false;
+            // 
+            // btnInteres
+            // 
+            this.btnInteres.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInteres.Image = global::TripTalk.Properties.Resources.botonGrisSombra100x30;
+            this.btnInteres.Location = new System.Drawing.Point(237, 282);
+            this.btnInteres.Name = "btnInteres";
+            this.btnInteres.Size = new System.Drawing.Size(100, 30);
+            this.btnInteres.TabIndex = 28;
+            this.btnInteres.Text = "Me interesa";
+            this.btnInteres.UseVisualStyleBackColor = true;
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExcel.Image = global::TripTalk.Properties.Resources.barraNaranja60x20;
+            this.btnExcel.Location = new System.Drawing.Point(411, 282);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(61, 30);
+            this.btnExcel.TabIndex = 27;
+            this.btnExcel.Text = "Excel";
+            this.btnExcel.UseVisualStyleBackColor = false;
+            // 
+            // pictureBoxOV
+            // 
+            this.pictureBoxOV.Image = global::TripTalk.Properties.Resources.panelBlancoRedondeado;
+            this.pictureBoxOV.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxOV.Name = "pictureBoxOV";
+            this.pictureBoxOV.Size = new System.Drawing.Size(560, 326);
+            this.pictureBoxOV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxOV.TabIndex = 18;
+            this.pictureBoxOV.TabStop = false;
+            // 
+            // btnComentarios
+            // 
+            this.btnComentarios.Image = global::TripTalk.Properties.Resources.botonGrisSombra100x30;
+            this.btnComentarios.Location = new System.Drawing.Point(218, 282);
+            this.btnComentarios.Name = "btnComentarios";
+            this.btnComentarios.Size = new System.Drawing.Size(100, 30);
+            this.btnComentarios.TabIndex = 15;
+            this.btnComentarios.Text = "Ver comentarios";
+            this.btnComentarios.UseVisualStyleBackColor = true;
+            this.btnComentarios.Click += new System.EventHandler(this.btnComentarios_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TripTalk.Properties.Resources.panelBlancoRedondeado;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(560, 326);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panelPublicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnBorrar);
+            this.Controls.Add(this.btnInteres);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.panelOV);
             this.Controls.Add(this.textOVDetalles);
             this.Controls.Add(this.labelOV3);
@@ -356,8 +397,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "panelPublicacion";
             this.Size = new System.Drawing.Size(560, 326);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBorrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,5 +434,8 @@
         private System.Windows.Forms.Panel panelOV;
         private System.Windows.Forms.TextBox textOVDetalles;
         private System.Windows.Forms.Label labelOV3;
+        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Button btnInteres;
+        private System.Windows.Forms.PictureBox btnBorrar;
     }
 }

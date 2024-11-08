@@ -23,6 +23,7 @@ namespace TripTalk.Clases
         private string tipo;
         private int idUsuario;
 
+
         public Publicacion() { }
 
         public Publicacion(int idPublicacion, string lugar, string presupuesto, string obstaculos, string lugarRecomendado1, string lugarRecomendado2, string lugarRecomendado3,
@@ -39,6 +40,7 @@ namespace TripTalk.Clases
             this.fechasRecomendadas = fechasRecomendadas;
             this.tipo = "opinion";
             this.idUsuario = idUsuario;
+
         }
 
         public Publicacion(int idPublicacion, string lugar, string presupuesto, string detalles, int idUsuario)
@@ -134,6 +136,7 @@ namespace TripTalk.Clases
             get => lugarRecomendado3;
             set => lugarRecomendado3 = value;
         }
+
     }
 
 }

@@ -133,6 +133,9 @@
   <data name="botonBlancoSombra100x30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\botonBlancoSombra100x30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MARCONaranjaRedondeado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MARCONaranjaRedondeado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="barraNaranja340x112" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\barraNaranja340x112.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -147,6 +150,9 @@
   </data>
   <data name="close30x30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close30x30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barraDegradadoNaranja341x38" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barraDegradadoNaranja341x38.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoTripTalk 350x175" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoTripTalk 350x175.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,13 +181,13 @@
   <data name="barraNaranja117x35" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\barraNaranja117x35.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="barraDegradadoNaranja341x38" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\barraDegradadoNaranja341x38.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="barraNaranja60x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barraNaranja60x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoTripTalk 150x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoTripTalk 150x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="barraNaranja60x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\barraNaranja60x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="deleteIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deleteIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

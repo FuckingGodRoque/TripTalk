@@ -48,7 +48,7 @@ public class LoginFrame extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Captura de pantalla 2024-11-05 194159.png"))); // NOI18N
+        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoNaranja.png"))); // NOI18N
         panelImage1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoTripTalk.png"))); // NOI18N

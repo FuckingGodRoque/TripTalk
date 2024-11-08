@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,10 +24,13 @@ namespace TripTalk.Clases
             this.respuesta = respuesta;
             this.idUsuario = idUsuario;
         }
-
+        [JsonProperty("idRespuesta")]
         public int IdRespuesta { get => idRespuesta; set => idRespuesta = value; }
+        [JsonProperty("idPregunta")]
         public int IdPregunta { get => idPregunta; set => idPregunta = value; }
+        [JsonProperty("respuesta")]
         public string Answer { get => respuesta; set => respuesta = value; }
+        [JsonProperty("idUsuario")]
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
     }
 }
